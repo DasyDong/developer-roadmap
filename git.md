@@ -325,7 +325,7 @@ GIT的架构，可以分为几个部分：
 远程仓库副本
 远程仓库(remote repository)。
 如图：
-![](https://ask.qcloudimg.com/raw/yehe-b34832df8c098/gkyvl4zmx3.png?imageView2/2/w/1620)
+![](./pics/git.png)
 工作区(working directory)
 工作区，简言之就是你工作的区域。对于git而言，就是的本地工作目录。工作区的内容会包含提交到暂存区和版本库(当前提交点)的内容，同时也包含自己的修改内容。
 
