@@ -108,7 +108,8 @@ git cherry -v master
 ## 分支的衍合 rebase
 把一个分支中的修改整合到另一个分支的办法有两种：merge 和 rebase（译注：rebase 的翻译暂定为“衍合”）
 
-![](http://iissnan.com/progit/book_src/figures/18333fig0328-tn.png)
+![](./pics/git/git-rebase1.png)
+
 ```
 $ git checkout experiment
 $ git rebase master
@@ -116,7 +117,7 @@ First, rewinding head to replay your work on top of it...
 Applying: added staged command
 ```
 原理是回到两个分支最近的共同祖先，根据当前分支（也就是要进行衍合的分支 experiment）后续的历次提交对象（这里只有一个 C3），生成一系列文件补丁，然后以基底分支（也就是主干分支 master）最后一个提交对象（C4）为新的出发点，逐个应用之前准备好的补丁文件，最后会生成一个新的合并提交对象（C3'），从而改写 experiment 的提交历史，使它成为 master 分支的直接下游, 如图所示
-![](http://iissnan.com/progit/book_src/figures/18333fig0329-tn.png)
+![](./pics/git/git-rebase2.png)
 
 
 ## 重写历史
@@ -325,7 +326,8 @@ GIT的架构，可以分为几个部分：
 远程仓库副本
 远程仓库(remote repository)。
 如图：
-![](./pics/git.png)
+![](./pics/git/git.png)
+
 工作区(working directory)
 工作区，简言之就是你工作的区域。对于git而言，就是的本地工作目录。工作区的内容会包含提交到暂存区和版本库(当前提交点)的内容，同时也包含自己的修改内容。
 
@@ -425,7 +427,7 @@ $ git cat-file -p 99f1a6d12cb4b6f19c8655fca46c3ecf317074e0
 ```
 
 从概念上来讲，Git 保存的数据如图  所示。
-![](http://iissnan.com/progit/book_src/figures/18333fig0901-tn.png)
+![](./pics/git/git-commit.png)
 
 ### Commit 对象
 

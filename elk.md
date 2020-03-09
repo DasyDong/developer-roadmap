@@ -20,7 +20,7 @@ ELK是一个应用套件，由Elasticsearch、Logstash和Kibana三部分组件�
 这三款软件都是开源软件，通常是配合使用，而且又先后归于Elastic.co公司名下，故又被简称为ELK Stack。
 下图是ELK Stack的基础组成。
 
-![](https://s1.51cto.com/images/blog/201808/05/43071d078f0f7e2c5f6892b9ed3629b1.pn)
+![](./pics./elk/elk-arch.png)
 
 ### 2 Elasticsearch介绍
 Elasticsearch是一个实时的分布式搜索和分析引擎，它可以用于全文搜索，结构化搜索以及分析，采用Java语言编写。目前，最新的版本是Elasticsearch6.3.2，它的主要特点如下：
@@ -28,7 +28,7 @@ Elasticsearch是一个实时的分布式搜索和分析引擎，它可以用于�
 实时搜索，实时分析分布式架构、实时文件存储，并将每一个字段都编入索引文档导向，所有的对象全部是文档高可用性，易扩展，支持集群（Cluster）、分片和复制（Shards和Replicas）接口友好，支持JSON
 
 Elasticsearch支持集群架构，典型的集群架构如下图所示：
-![](https://s1.51cto.com/images/blog/201808/05/016176168962fa04584ed7405c111f36.png)
+![](./pics./elk/elk-cluster.png)
 
 从图中可以看出，Elasticsearch集群中有Master Node和SlaveNode两种角色，其实还有一种角色Client Node，这在后面会做深入介绍。
 
@@ -42,7 +42,7 @@ Logstash的理念很简单，从功能上来讲，它只做三件事情：
 input：数据收集filter：数据加工，如过滤，改写等output：数据输出
 
 别看它只做三件事，但通过组合输入和输出，可以变幻出多种架构实现多种需求。Logstash内部运行逻辑如下图所示：
-![](https://s1.51cto.com/images/blog/201808/05/bfd351426962db4f8defcabe811b188c.png)
+![](./pics./elk/elk-logstash.png)
 其中，每个部分含义如下：
 
 Shipper：主要用来收集日志数据，负责监控本地日志文件的变化，及时把日志文件的最新内容收集起来，然后经过加工、过滤，输出到Broker。
@@ -59,7 +59,7 @@ Kibana是一个开源的数据分析可视化平台。使用Kibana可以为Logst
 ### 5 ELK工作流程
 一般都是在需要收集日志的所有服务上部署logstash，作为logstash shipper用于监控并收集、过滤日志，接着，将过滤后的日志发送给Broker，然后，Logstash Indexer将存放在Broker中的数据再写入Elasticsearch，Elasticsearch对这些数据创建索引，最后由Kibana对其进行各种分析并以图表的形式展示。
 ELK工作流程如下图所示：
-![](https://s1.51cto.com/images/blog/201808/05/5232448b3eff98f6976b65d95b51bab4.png)
+![](./pics./elk/elk-elk.png)
 
 有些时候，如果收集的日志量较大，为了保证日志收集的性能和数据的完整性，logstash shipper和logstash indexer之间的缓冲器（Broker）也经常采用kafka来实现。
 
@@ -71,7 +71,7 @@ ELK套件在大数据运维应用中是一套必不可少的、方便的、易�
 
 下图是最简单的ELK应用架构：
 
-![](https://s1.51cto.com/images/blog/201808/05/36883ad60de367d97e8d4d02cf2c761d.png)
+![](./pics./elk/elk-easy.png)
 
 此架构主要是将Logstash部署在各个节点上搜集相关日志、数据，并经过分析、过滤后发送给远端服务器上的Elasticsearch进行存储。Elasticsearch再将数据以分片的形式压缩存储，并提供多种API供用户查询、操作。用户可以通过Kibana Web直观的对日志进行查询，并根据需求生成数据报表。
 
@@ -80,7 +80,7 @@ ELK套件在大数据运维应用中是一套必不可少的、方便的、易�
 ### 2 典型ELK架构
 为保证ELK收集日志数据的安全性和稳定性，此架构引入了消息队列机制，下图是典型的ELK应用架构：
 
-![](https://s1.51cto.com/images/blog/201808/05/a697213848db1f6ae0e95bd4de068107.png)
+![](./pics./elk/elk-tradi.png)
 
 此架构主要特点是引入了消息队列机制，位于各个节点上的Logstash Agent（一级Logstash，主要用来传输数据）先将数据传递给消息队列（常见的有Kafka、Redis等），接着，Logstash server（二级Logstash，主要用来拉取消息队列数据，过滤并分析数据）将格式化的数据传递给Elasticsearch进行存储。最后，由Kibana将日志和数据呈现给用户。由于引入了Kafka（或者Redis）缓存机制，即使远端Logstash server因故障停止运行，数据也不会丢失，因为数据已经被存储下来了。
 
@@ -91,7 +91,7 @@ ELK套件在大数据运维应用中是一套必不可少的、方便的、易�
 ### 3 ELK集群架构
 这个架构是在上面第二个架构基础上改进而来的，主要是将前端收集数据的Logstash Agent换成了filebeat，消息队列使用了kafka集群，然后将Logstash和Elasticsearch都通过集群模式进行构建，完整架构如下图所示：
 
-![](https://s1.51cto.com/images/blog/201808/05/0ed7ca8b3ba00918fa56744df9ac1387.png)
+![](./pics./elk/elk-clusarch.png)
 
 此架构适合大型集群、海量数据的业务场景，它通过将前端LogstashAgent替换成filebeat，有效降低了收集日志对业务系统资源的消耗。同时，消息队列使用kafka集群架构，有效保障了收集数据的安全性和稳定性，而后端Logstash和Elasticsearch均采用集群模式搭建，从整体上提高了ELK系统的高效性、扩展性和吞吐量。
 

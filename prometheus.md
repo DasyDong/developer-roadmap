@@ -50,7 +50,7 @@ Prometheus 非常重视可靠性，即使在出现故障的情况下，你也可
 
 Prometheus 的整体架构以及生态系统组件如下图所示：
 
-![](https://prometheus.io/assets/architecture.png)
+![](./pics/prometheus/prom-arch.png)
 
 Prometheus Server 直接从监控目标中或者间接通过推送网关来拉取监控指标，它在本地存储所有抓取到的样本数据，并对此数据执行一系列规则，以汇总和记录现有数据的新时间序列或生成告警.可以通过 Grafana 或者其他工具来实现监控数据的可视化.
 
@@ -92,7 +92,8 @@ Prometheus server 在本地存储收集到的 metrics，并运行已定义好的
 Alertmanager 根据配置文件，对接收到的警报进行处理，发出告警。
 在图形界面中，可视化采集数据。
 
-![](https://pics6.baidu.com/feed/b21c8701a18b87d6943f7372953bcb3c1f30fd13.jpeg?token=e12eb8f278ec7b4315b8cd06a6d552e4&s=B182FD138AD570CA146CC8D7030090E3)
+![](./pics/prometheus/prom-workflow.png)
+
 
 ## 工作原理
 如前所述，Prometheus由各种不同的组件组成。其监控指标可以从系统中提取到，可以通过不同的方式做到：
@@ -104,8 +105,6 @@ Alertmanager 根据配置文件，对接收到的警报进行处理，发出告�
 通过使用Pushgateway：应用程序或作业不会直接公开指标。某些应用程序要么没有合适的监控模版（例如批处理作业），对他们选择不能直接通过应用程序公开这些指标。如果我们忽略您可能使用Pushgateway的极少数情况，Prometheus是一个基于主动请求pull的监控系统。
 
 ## 推方式和拉方式
-
-![](https://pics5.baidu.com/feed/dcc451da81cb39dbb634375f4225ea20aa1830fe.jpeg?token=389003f2d2f466f60e988eeea4172a97&s=0594EF361B40584158D184CA00004033)
 Prometheus与其他时间序列数据库之间存在明显差异：Prometheus主动筛选目标，以便从中检索指标。这与InfluxDB非常不同，InfluxDB是需要直接推送数据给它。
 
 
