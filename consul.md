@@ -33,7 +33,7 @@ Consul支持Key/Value存储功能，可以将Consul作为配置中心使用，�
 2.ACL
 
 Consul工作模式
-![Consul工作模式](https://www.consul.io/assets/images/consul-arch-420ce04a.png)
+![Consul工作模式](./pics/consul-infos.png)
 从上图可以看到，Consul中包括的3种不同的角色：Client、Server、Server-Leader。还有一个在图上没有标出来的角色Agent，一共4个角色，下面会逐一介绍它们的作用。
 
 Agent<br>
@@ -105,7 +105,7 @@ http://{ip}:8500/v1/health/service/:service
 ```
 
 方式二：DNS Agent
-![工作流程](https://upload-images.jianshu.io/upload_images/9073146-6e96f88cbc612da3.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/526/format/webp)
+![](./pics/consul-agent.png)
 
 ## 参考
 

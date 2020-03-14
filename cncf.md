@@ -147,10 +147,12 @@ Notary和TUF（The Upgrade Framework）是这个领域两个主要的项目，�
 ### 6.Observability and Analysis监控分析
 这个部分包含了大量用于对平台进行监控（Prometheus、Nagios、Grafana、Zabbix等）、日志（Fluentd、ElasticSearch、Logstash）、以及追踪（Jaeger）的工具。
 
-这个部分包含了大量用于对平台进行监控（Prometheus、Nagios、Grafana、Zabbix等）、日志（Fluentd、ElasticSearch、Logstash）、以及追踪（Jaeger）的工具。
-
 ### 7.Serverless 无服务
 
 ### 8.合作伙伴（Special）
 
 ### 9.成员构成
+
+## 文章及视频
+
+https://www.cncf.io/webinars/what-is-cloud-native-and-why-does-it-exist/

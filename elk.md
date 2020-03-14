@@ -23,7 +23,7 @@ ELK是一个应用套件，由Elasticsearch、Logstash和Kibana三部分组件�
 ![](./pics./elk/elk-arch.png)
 
 ### 2 Elasticsearch介绍
-Elasticsearch是一个实时的分布式搜索和分析引擎，它可以用于全文搜索，结构化搜索以及分析，采用Java语言编写。目前，最新的版本是Elasticsearch6.3.2，它的主要特点如下：
+Elasticsearch是一个实时的分布式搜索和分析引擎，它可以用于全文搜索，结构化搜索以及分析，采用Java语言编写。目前，最新的版本是Elasticsearch7.6.1，它的主要特点如下：
 
 实时搜索，实时分析分布式架构、实时文件存储，并将每一个字段都编入索引文档导向，所有的对象全部是文档高可用性，易扩展，支持集群（Cluster）、分片和复制（Shards和Replicas）接口友好，支持JSON
 
@@ -33,7 +33,7 @@ Elasticsearch支持集群架构，典型的集群架构如下图所示：
 从图中可以看出，Elasticsearch集群中有Master Node和SlaveNode两种角色，其实还有一种角色Client Node，这在后面会做深入介绍。
 
 ### 3 Logstash介绍
-Logstash是一款轻量级的、开源的日志收集处理框架，它可以方便的把分散的、多样化的日志搜集起来，并进行自定义过滤分析处理，然后传输到指定的位置，比如某个服务器或者文件。Logstash采用JRuby语言编写，目前最新的版本是Logstash6.3.2，它的主要特点如下：
+Logstash是一款轻量级的、开源的日志收集处理框架，它可以方便的把分散的、多样化的日志搜集起来，并进行自定义过滤分析处理，然后传输到指定的位置，比如某个服务器或者文件。Logstash采用JRuby语言编写，目前最新的版本是Logstash7.6.1，它的主要特点如下：
 
 几乎可以访问任何数据可以和多种外部应用整合支持动态、弹性扩展
 

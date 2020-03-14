@@ -190,11 +190,11 @@ Python:
 
 从时间复杂度来看,Timsort是威武的.更详细各种排序对比请看README中内容
 
-![](../pics/python/timsort1.png)
+![](./pics/python/timsort1.png)
 
 从空间复杂度来讲,需要的开销在数量大的时候会增大.
 
-![](../pics/python/timsort2.png)
+![](./pics/python/timsort2.png)
 
 
 # list 列表

@@ -27,67 +27,65 @@
 - [CNCF](#cncf)
 - [Python源码原理解析](#python源码原理解析)
 - [Python基础](#python基础)
-    - [文件操作](#文件操作)
-        - [3.有一个jsonline格式的文件file.txt大小约为10K](#3有一个jsonline格式的文件filetxt大小约为10k)
-        - [4.返回该文件夹中所有文件的路径](#4返回该文件夹中所有文件的路径)
-        - [5.设计实现遍历目录与子目录，抓取.pyc文件](#5设计实现遍历目录与子目录抓取pyc文件)
-    - [模块与包](#模块与包)
-        - [6.输入日期， 判断这一天是这一年的第几天？](#6输入日期-判断这一天是这一年的第几天)
-        - [7.打乱一个排好序的list对象alist？](#7打乱一个排好序的list对象alist)
     - [Python语言基本](#python语言基本)
-        - [8.现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?](#8现有字典-d-a24g52i12k33请按value值进行排序)
-        - [9.字典推导式](#9字典推导式)
-        - [10.请反转字符串 "aStr"?](#10请反转字符串-"astr")
-        - [11.请按alist中元素的age由大到小排序](#11请按alist中元素的age由大到小排序)
-        - [12.下面代码的输出结果将是什么？](#12下面代码的输出结果将是什么)
-        - [13.写一个列表生成式，产生一个公差为11的等差数列](#13写一个列表生成式产生一个公差为11的等差数列)
-        - [14.给定两个列表，怎么找出他们相同的元素和不同的元素？](#14给定两个列表怎么找出他们相同的元素和不同的元素)
-        - [15.列出 5 个常用 Python 标准库?](#15列出-5-个常用-python-标准库)
-        - [16.Python的内建数据类型有哪些?](#16python的内建数据类型有哪些)
-        - [17.简述 with 方法打开处理文件帮我我们做了什么？](#17简述-with-方法打开处理文件帮我我们做了什么)
-        - [18.Python的可变和不可变数据类型？](#18python的可变和不可变数据类型)
-        - [19.Python 获取当前日期？](#19python-获取当前日期)
-        - [20.谈谈对 Python 的了解和其他语言的区别](#20谈谈对-python-的了解和其他语言的区别)
-        - [21.说说你知道的Python3 和 Python2 之间的区别](#21说说你知道的python3-和-python2-之间的区别)
-        - [22.了解 Python 之禅么？](#22了解-python-之禅么)
-        - [23.了解 docstring 么？](#23了解-docstring-么)
-        - [24.了解类型注解么？](#24了解类型注解么)
-        - [25.例举你知道 Python 对象的命名规范，例如方法或者类等](#25例举你知道-python-对象的命名规范例如方法或者类等)
-        - [26.例举几个规范 Python 代码风格的工具](#26例举几个规范-python-代码风格的工具)
-        - [27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？](#27一个编码为-gbk-的字符串-s要将其转成-utf-8-编码的字符串应如何操作)
-        - [28.用正则切分字符串去除非符号](#28用正则切分字符串去除非符号)
-        - [29.单引号、双引号、三引号的区别？](#29单引号、双引号、三引号的区别)
-        - [30.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]](#30[[12][34][56]]一行代码展开该列表得出[123456])
-        - [31.哪些不能作为字典的健](#31哪些不能作为字典的健)
-        - [32.如何交换字典 {"A"：1,"B"：2}的键和值？](#32如何交换字典-"a"：1"b"：2的键和值)
-        - [33.对生成器类型的对象实现切片功能](#33对生成器类型的对象实现切片功能)
-        - [34.关于list tuple copy 和 deepcopy 的区别是什么？](#34关于list-tuple-copy-和-deepcopy-的区别是什么)
-        - [35.代码中经常遇到的*args, **kwargs 含义及用法。](#35代码中经常遇到的args-kwargs-含义及用法)
-        - [36.Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?](#36python-中会有函数或成员变量包含单下划线前缀和结尾和双下划线前缀结尾区别是什么)
-        - [37.json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？](#37json-序列化时可以处理的数据类型有哪些如何定制支持-datetime-类型)
-        - [38.json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？](#38json-序列化时默认遇到中文会转换成-unicode如果想要保留中文怎么办)
-        - [39.如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)](#39如果当前的日期为-20190530要求写一个函数输出-n-天后的日期比如-n-为-2则输出-20190601)
-        - [40.python 字典和 json 字符串相互转化方法](#40python-字典和-json-字符串相互转化方法)
-        - [41.函数装饰器有什么作用？请列举说明？](#41函数装饰器有什么作用请列举说明)
-        - [42.__call__](#42__call__)
-        - [43.如何判断一个对象是函数还是方法？](#43如何判断一个对象是函数还是方法)
-        - [44.python实现接口 ？](#44python实现接口-)
-        - [45.Python 中的反射了解么?](#45python-中的反射了解么)
-        - [46.metaclass or type](#46metaclass-or-type)
-        - [47.Python中递归的最大次数1000 ?怎么改](#47python中递归的最大次数1000-怎么改)
-        - [48.列举 5 个 Python 中的异常类型以及其含义](#48列举-5-个-python-中的异常类型以及其含义)
-        - [49.w、a+、wb 文件写入模式的区别](#49w、a、wb-文件写入模式的区别)
-        - [50.举例 sort 和 sorted 的区别](#50举例-sort-和-sorted-的区别)
-        - [51.在 requests 模块中，requests.content 和 requests.text 什么区别](#51在-requests-模块中requestscontent-和-requeststext-什么区别)
-        - [52.python新式类和经典类的区别](#52python新式类和经典类的区别)
-        - [53.字符串的操作题目](#53字符串的操作题目)
-        - [54.可变类型和不可变类型](#54可变类型和不可变类型)
-        - [55.is和==有什么区别？](#55is和有什么区别)
-        - [56.求出列表所有奇数并构造新列表](#56求出列表所有奇数并构造新列表)
-        - [57.用一行python代码写出1+2+3+10248](#57用一行python代码写出12310248)
-        - [58.Python中变量的作用域？（变量查找顺序)](#58python中变量的作用域变量查找顺序)
-        - [59.字符串 `"123"` 转换成 `123`，不使用内置api，例如 `int()`](#59字符串-`"123"`-转换成-`123`不使用内置api例如-`int`)
-        - [60.Given an array of integers](#60given-an-array-of-integers)
+        - [3.列出 5 个常用 Python 标准库?](#3列出-5-个常用-python-标准库)
+        - [4.Python的内建数据类型有哪些?](#4python的内建数据类型有哪些)
+        - [5.简述 with 方法打开处理文件帮我我们做了什么？](#5简述-with-方法打开处理文件帮我我们做了什么)
+        - [6.Python的可变和不可变数据类型？](#6python的可变和不可变数据类型)
+        - [7.Python 获取当前日期？](#7python-获取当前日期)
+        - [8.谈谈对 Python 的了解和其他语言的区别](#8谈谈对-python-的了解和其他语言的区别)
+        - [9.说说你知道的Python3 和 Python2 之间的区别](#9说说你知道的python3-和-python2-之间的区别)
+        - [10.了解 Python 之禅么？](#10了解-python-之禅么)
+        - [11.了解 docstring 么？](#11了解-docstring-么)
+        - [12.了解类型注解么？](#12了解类型注解么)
+        - [13.例举你知道 Python 对象的命名规范，例如方法或者类等](#13例举你知道-python-对象的命名规范例如方法或者类等)
+        - [14.例举几个规范 Python 代码风格的工具](#14例举几个规范-python-代码风格的工具)
+        - [15.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？](#15一个编码为-gbk-的字符串-s要将其转成-utf-8-编码的字符串应如何操作)
+        - [16.用正则切分字符串去除非符号](#16用正则切分字符串去除非符号)
+        - [17.单引号、双引号、三引号的区别？](#17单引号、双引号、三引号的区别)
+        - [18.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]](#18[[12][34][56]]一行代码展开该列表得出[123456])
+        - [19.哪些不能作为字典的健](#19哪些不能作为字典的健)
+        - [20.如何交换字典 {"A"：1,"B"：2}的键和值？](#20如何交换字典-"a"：1"b"：2的键和值)
+        - [21.对生成器类型的对象实现切片功能](#21对生成器类型的对象实现切片功能)
+        - [22.关于list tuple copy 和 deepcopy 的区别是什么？](#22关于list-tuple-copy-和-deepcopy-的区别是什么)
+        - [23.代码中经常遇到的*args, **kwargs 含义及用法。](#23代码中经常遇到的args-kwargs-含义及用法)
+        - [24.Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?](#24python-中会有函数或成员变量包含单下划线前缀和结尾和双下划线前缀结尾区别是什么)
+        - [25.json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？](#25json-序列化时可以处理的数据类型有哪些如何定制支持-datetime-类型)
+        - [26.json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？](#26json-序列化时默认遇到中文会转换成-unicode如果想要保留中文怎么办)
+        - [27.如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)](#27如果当前的日期为-20190530要求写一个函数输出-n-天后的日期比如-n-为-2则输出-20190601)
+        - [28.python 字典和 json 字符串相互转化方法](#28python-字典和-json-字符串相互转化方法)
+        - [29.函数装饰器有什么作用？请列举说明？](#29函数装饰器有什么作用请列举说明)
+        - [30.__call__](#30__call__)
+        - [31.如何判断一个对象是函数还是方法？](#31如何判断一个对象是函数还是方法)
+        - [32.python实现接口 ？](#32python实现接口-)
+        - [33.Python 中的反射了解么?](#33python-中的反射了解么)
+        - [34.metaclass or type](#34metaclass-or-type)
+        - [35.Python中递归的最大次数1000 ?怎么改](#35python中递归的最大次数1000-怎么改)
+        - [36.列举 5 个 Python 中的异常类型以及其含义](#36列举-5-个-python-中的异常类型以及其含义)
+        - [37.w、a+、wb 文件写入模式的区别](#37w、a、wb-文件写入模式的区别)
+        - [38.举例 sort 和 sorted 的区别](#38举例-sort-和-sorted-的区别)
+        - [39.在 requests 模块中，requests.content 和 requests.text 什么区别](#39在-requests-模块中requestscontent-和-requeststext-什么区别)
+        - [40.python新式类和经典类的区别](#40python新式类和经典类的区别)
+        - [41.字符串的操作题目](#41字符串的操作题目)
+        - [42.可变类型和不可变类型](#42可变类型和不可变类型)
+        - [43.is和==有什么区别？](#43is和有什么区别)
+        - [44.求出列表所有奇数并构造新列表](#44求出列表所有奇数并构造新列表)
+        - [45.用一行python代码写出1+2+3+10248](#45用一行python代码写出12310248)
+        - [46.Python中变量的作用域？（变量查找顺序)](#46python中变量的作用域变量查找顺序)
+        - [47.字符串 `"123"` 转换成 `123`，不使用内置api，例如 `int()`](#47字符串-`"123"`-转换成-`123`不使用内置api例如-`int`)
+        - [48.Given an array of integers](#48given-an-array-of-integers)
+        - [49.有一个jsonline格式的文件file.txt大小约为10K](#49有一个jsonline格式的文件filetxt大小约为10k)
+        - [50.返回该文件夹中所有文件的路径](#50返回该文件夹中所有文件的路径)
+        - [51.设计实现遍历目录与子目录，抓取.pyc文件](#51设计实现遍历目录与子目录抓取pyc文件)
+        - [52.输入日期， 判断这一天是这一年的第几天？](#52输入日期-判断这一天是这一年的第几天)
+        - [53.打乱一个排好序的list对象alist？](#53打乱一个排好序的list对象alist)
+        - [54.现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?](#54现有字典-d-a24g52i12k33请按value值进行排序)
+        - [55.字典推导式](#55字典推导式)
+        - [56.请反转字符串 "aStr"?](#56请反转字符串-"astr")
+        - [57.请按alist中元素的age由大到小排序](#57请按alist中元素的age由大到小排序)
+        - [58.下面代码的输出结果将是什么？](#58下面代码的输出结果将是什么)
+        - [59.写一个列表生成式，产生一个公差为11的等差数列](#59写一个列表生成式产生一个公差为11的等差数列)
+        - [60.给定两个列表，怎么找出他们相同的元素和不同的元素？](#60给定两个列表怎么找出他们相同的元素和不同的元素)
         - [61.统计一个文本中单词频次最高的10个单词？](#61统计一个文本中单词频次最高的10个单词)
         - [62.给定一个任意长度数组，实现一个函数](#62给定一个任意长度数组实现一个函数)
         - [63.写一个函数找出一个整数数组中，第二大的数](#63写一个函数找出一个整数数组中第二大的数)
@@ -213,12 +211,6 @@
         - [166.写一个二分查找](#166写一个二分查找)
         - [167.set 用 in 时间复杂度是多少，为什么？](#167set-用-in-时间复杂度是多少为什么)
         - [168.列表中有n个正整数范围在[0，1000]，进行排序；](#168列表中有n个正整数范围在[01000]进行排序；)
-- [大数据](#大数据)
-    - [实战](#实战)
-        - [169.找出1G的文件中高频词](#169找出1g的文件中高频词)
-        - [170.一个大约有一万行的文本文件统计高频词](#170一个大约有一万行的文本文件统计高频词)
-        - [171.怎么在海量数据中找出重复次数最多的一个？](#171怎么在海量数据中找出重复次数最多的一个)
-        - [172.判断数据是否在大量数据中](#172判断数据是否在大量数据中)
 <!-- TOC -->
 
 
@@ -345,182 +337,12 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 
 
 # Python基础
-## 文件操作
-### 3.有一个jsonline格式的文件file.txt大小约为10K
-```python
-def get_lines():
-    with open('file.txt','rb') as f:
-        return f.readlines()
-
-if __name__ == '__main__':
-    for e in get_lines():
-        process(e) # 处理每一行数据
-```
-现在要处理一个大小为10G的文件，但是内存只有4G，如果在只修改get_lines 函数而其他代码保持不变的情况下，应该如何实现？需要考虑的问题都有那些？
-```python
-def get_lines():
-    with open('file.txt','rb') as f:
-        for i in f:
-            yield i
-```
-Pandaaaa906提供的方法
-```python
-from mmap import mmap
-
-
-def get_lines(fp):
-    with open(fp,"r+") as f:
-        m = mmap(f.fileno(), 0)
-        tmp = 0
-        for i, char in enumerate(m):
-            if char==b"\n":
-                yield m[tmp:i+1].decode()
-                tmp = i+1
-
-if __name__=="__main__":
-    for i in get_lines("fp_some_huge_file"):
-        print(i)
-```
-要考虑的问题有：内存只有4G无法一次性读入10G文件，需要分批读入分批读入数据要记录每次读入数据的位置。分批每次读取数据的大小，太小会在读取操作花费过多时间。
-https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large-file
-
-### 4.返回该文件夹中所有文件的路径
-```python
-def print_directory_contents(sPath):
-"""
-这个函数接收文件夹的名称作为输入参数
-返回该文件夹中文件的路径
-以及其包含文件夹中文件的路径
-"""
-import os
-for s_child in os.listdir(s_path):
-    s_child_path = os.path.join(s_path, s_child)
-    if os.path.isdir(s_child_path):
-        print_directory_contents(s_child_path)
-    else:
-        print(s_child_path)
-```
-### 5.设计实现遍历目录与子目录，抓取.pyc文件
-第一种方法：
-```python
-import os
-
-def get_files(dir,suffix):
-    res = []
-    for root,dirs,files in os.walk(dir):
-        for filename in files:
-            name,suf = os.path.splitext(filename)
-            if suf == suffix:
-                res.append(os.path.join(root,filename))
-
-    print(res)
-
-get_files("./",'.pyc')
-```
-第二种方法：
-```python
-import os
-
-def pick(obj):
-    if ob.endswith(".pyc"):
-        print(obj)
-
-def scan_path(ph):
-    file_list = os.listdir(ph)
-    for obj in file_list:
-        if os.path.isfile(obj):
-    pick(obj)
-        elif os.path.isdir(obj):
-            scan_path(obj)
-
-if __name__=='__main__':
-    path = input('输入目录')
-    scan_path(path)
-```
-第三种方法
-```python
-from glob import iglob
-
-def func(fp, postfix):
-    for i in iglob(f"{fp}/**/*{postfix}", recursive=True):
-        print(i)
-
-if __name__ == "__main__":
-    postfix = ".pyc"
-    func("K:\Python_script", postfix)
-```
-
-## 模块与包
-### 6.输入日期， 判断这一天是这一年的第几天？
-```python
-import datetime
-def dayofyear():
-    year = input("请输入年份: ")
-    month = input("请输入月份: ")
-    day = input("请输入天: ")
-    date1 = datetime.date(year=int(year),month=int(month),day=int(day))
-    date2 = datetime.date(year=int(year),month=1,day=1)
-    return (date1-date2).days+1
-```
-### 7.打乱一个排好序的list对象alist？
-```python
-import random
-alist = [1,2,3,4,5]
-random.shuffle(alist)
-print(alist)
-
-# 下面这段代码是shuffle的实现
-items = list(alist)
-for i in xrange(len(alist)):
-    alist[i] = items.pop(self.randrange(len(items)))
-
-```
 ## Python语言基本
-### 8.现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?
-```python
-sorted(d.items(),key=lambda x:x[1])
-```
-### 9.字典推导式
-```python
-# 将字符串 "k:1 |k1:2|k2:3|k3:4"，处理成字典 {k:1,k1:2,...}
-# d = {key:value for (key,value) in iterable}
-d = {k:int(v) for t in str1.split("|") for k, v in (t.split(":"), )}
-```
-### 10.请反转字符串 "aStr"?
-```python
-print("aStr"[::-1])
-```
-### 11.请按alist中元素的age由大到小排序
-```python
-alist = [{'name':'a','age':20},{'name':'b','age':30},{'name':'c','age':25}]
-def sort_by_age(list1):
-    return sorted(alist, key=lambda x:x['age'], reverse=True)
-```
-### 12.下面代码的输出结果将是什么？
-```python
-list = ['a','b','c','d','e']
-print(list[10:])
-```
-代码将输出[],不会产生IndexError错误，就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如，尝试获取list[10]和之后的成员，会导致IndexError。然而，尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError，而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症，因为运行的时候没有错误产生，导致Bug很难被追踪到。
-### 13.写一个列表生成式，产生一个公差为11的等差数列
-```python
-print([x*11 for x in range(10)])
-```
-### 14.给定两个列表，怎么找出他们相同的元素和不同的元素？
-```python
-list1 = [1,2,3]
-list2 = [3,4,5]
-set1 = set(list1)
-set2 = set(list2)
-print(set1 & set2)
-print(set1 ^ set2)
-```
-
-### 15.列出 5 个常用 Python 标准库?
+### 3.列出 5 个常用 Python 标准库?
 os, logging, system, time, re, math,threading
-### 16.Python的内建数据类型有哪些?
+### 4.Python的内建数据类型有哪些?
 string, int, list, tuple, dict
-### 17.简述 with 方法打开处理文件帮我我们做了什么？
+### 5.简述 with 方法打开处理文件帮我我们做了什么？
 with 语句适用于对资源进行访问的场合，确保不管使用过程中是否发生异常都会执行必要的“清理”操作，释放资源，比如文件使用后自动关闭、线程中锁的自动获取和释放等。
 
 with语句即“上下文管理器”，在程序中用来表示代码执行过程中所处的前后环境 上下文管理器：含有__enter__和__exit__方法的对象就是上下文管理器。
@@ -529,14 +351,14 @@ __enter__()：在执行语句之前，首先执行该方法，通常返回一个
 __exit__()：执行语句结束后，自动调用__exit__()方法，用户释放资源，若此方法返回布尔值True，程序会忽略异常。
 使用环境：文件读写、线程锁的自动释放等。
 
-### 18.Python的可变和不可变数据类型？
+### 6.Python的可变和不可变数据类型？
 可变 list， dict， set
 不可变 int string tuple
 
-### 19.Python 获取当前日期？
+### 7.Python 获取当前日期？
 from datetime import datetime; datetime.now()
 
-### 20.谈谈对 Python 的了解和其他语言的区别
+### 8.谈谈对 Python 的了解和其他语言的区别
 python是典型的动态类型强类型语言
 
 强类型语言, 不需要隐士转换
@@ -547,10 +369,10 @@ python是典型的动态类型强类型语言
 
 Python是动态类型语言，而Java是静态类型语言.
 
-### 21.说说你知道的Python3 和 Python2 之间的区别
+### 9.说说你知道的Python3 和 Python2 之间的区别
 print, string/unicode, exception, divide, xrange,
 
-### 22.了解 Python 之禅么？
+### 10.了解 Python 之禅么？
 ```
 import this
 
@@ -592,9 +414,9 @@ Namespaces are one honking great idea -- let's do more of those!
 命名空间是一种绝妙的理念，我们应当多加利用（倡导与号召）
 ```
 
-### 23.了解 docstring 么？
+### 11.了解 docstring 么？
 文档字符串是一个重要工具，用于解释文档程序 ，帮助你的程序文档更加简单易懂。 我们可以在函数体的第一行使用一对三个单引号 或者一对三个双引号 来定义文档字符串。 你可以使用 __doc__ 调用函数中的文档字符串属性
-### 24.了解类型注解么？
+### 12.了解类型注解么？
 ```
 def list_to_str (param_list:list,connect_str: str = " ") - > str:
     paas
@@ -606,7 +428,7 @@ pip install mypy
 mypy demo.py
 若无错误则无输出
 
-### 25.例举你知道 Python 对象的命名规范，例如方法或者类等
+### 13.例举你知道 Python 对象的命名规范，例如方法或者类等
 变量命名：字母数字下划线，不能以数字开头
 
 _ 受保护的
@@ -617,19 +439,19 @@ __init__ 内置变量
 
 函数和方法（类中叫做方法，模块中称作函数）命名 ：
 
-### 26.例举几个规范 Python 代码风格的工具
+### 14.例举几个规范 Python 代码风格的工具
 pylint，yapf, autopep8, flake8
 
-### 27.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
+### 15.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？
 demo_str = "demo".encode("gbk")
 demo=demo_str.decode('gbk').encode('utf-8'）
 
-### 28.用正则切分字符串去除非符号
+### 16.用正则切分字符串去除非符号
 s="info：xiaoZhang 33 shandong"
 ['info', 'xiaoZhang', '33', 'shandong']
 re.compile(r'\W').split(s)
 
-### 29.单引号、双引号、三引号的区别？
+### 17.单引号、双引号、三引号的区别？
 在不需要转义的时候， 单引号和双引号无区别
 ```
 "abc 'wewe'we"
@@ -637,24 +459,24 @@ re.compile(r'\W').split(s)
 'abc \'wewe\'we'
 ```
 
-### 30.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
+### 18.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]
 question_list =  [[1,2],[3,4],[5,6]]
 [a for inside in question_list for a in inside]
 
-### 31.哪些不能作为字典的健
+### 19.哪些不能作为字典的健
 字典中的键是不可变类型，可变类型list和dict不能作为字典键
 一个对象能不能作为字典的key，就取决于其有没有__hash__方法
 
-### 32.如何交换字典 {"A"：1,"B"：2}的键和值？
+### 20.如何交换字典 {"A"：1,"B"：2}的键和值？
 result_dic = {v: k for k, v in demo_dic.items()}
 
-### 33.对生成器类型的对象实现切片功能
+### 21.对生成器类型的对象实现切片功能
 ```
 import itertools
 itertools.islice(gener, 10, 20)
 ```
 
-### 34.关于list tuple copy 和 deepcopy 的区别是什么？
+### 22.关于list tuple copy 和 deepcopy 的区别是什么？
 tuple：
 ```
 a = (1, 2, 3, [4, 5, 6, 7], 8)
@@ -690,11 +512,11 @@ a, b, c,d,e
 copy 仅拷贝对象本身，而不拷贝对象中引用的其它对象。
 deepcopy 除拷贝对象本身，而且拷贝对象中引用的其它对象。（子对象）
 
-### 35.代码中经常遇到的*args, **kwargs 含义及用法。
+### 23.代码中经常遇到的*args, **kwargs 含义及用法。
 args 是 arguments 的缩写，表示位置参数
 kwargs 是 keyword arguments 的缩写，表示关键字参数
 
-### 36.Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?
+### 24.Python 中会有函数或成员变量包含单下划线前缀和结尾，和双下划线前缀结尾，区别是什么?
 下划线开头的命名方式被常用于模块中，在一个模块中以单下划线开头的变量和方法会被默认划入模块内部范围。
 
 当使用 from my_module import * 导入时，单下划线开头的变量和方法是不会被导入的。但使用 import my_module 导入的话，仍然可以用 my_module._var 这样的形式访问属性或方法。
@@ -704,14 +526,14 @@ kwargs 是 keyword arguments 的缩写，表示关键字参数
 class A中定义的属性__cont ，这样的变量获取时需要用A._A__cont
 
 
-### 37.json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？
+### 25.json 序列化时，可以处理的数据类型有哪些？如何定制支持 datetime 类型？
 json序列化时，可以处理列表、字典、字符、数值、布尔和None
 定制datetime类型↓
 
-### 38.json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？
+### 26.json 序列化时，默认遇到中文会转换成 unicode，如果想要保留中文怎么办？
 print(json.dumps(dict_demo, ensure_ascii=False))
 
-### 39.如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)
+### 27.如果当前的日期为 20190530，要求写一个函数输出 N 天后的日期，(比如 N 为 2，则输出 20190601)
 ```
 from datetime import datetime, timedelta
 now_date = "20190530"
@@ -720,7 +542,7 @@ offset = timedelta(days=2)
 (now_date + offset).strftime("%Y%m%d")
 ```
 
-### 40.python 字典和 json 字符串相互转化方法
+### 28.python 字典和 json 字符串相互转化方法
 ```
 #导包
 import json
@@ -731,10 +553,10 @@ json.loads(json_str)
 #字典转换成json字符串
 json.dumps(dict)
 ```
-### 41.函数装饰器有什么作用？请列举说明？
+### 29.函数装饰器有什么作用？请列举说明？
 1，引入日志 2，函数执行时间统计3，执行函数前预备处理4，执行函数后清理功能5，权限校验等场景6，缓存7，事务处理
 
-### 42.__call__
+### 30.__call__
 可以调用的对象: 一个特殊的魔术方法可以让类的实例的行为表现的像函数一样
 ```
 class Entity:
@@ -754,7 +576,7 @@ e(4, 5) //实例可以象函数那样执行，并传入x y值，修改对象的x
 
 https://www.jianshu.com/p/e1d95c4e1697?utm_source=oschina-app
 
-### 43.如何判断一个对象是函数还是方法？
+### 31.如何判断一个对象是函数还是方法？
 在类外声明def为函数
 
 类中声明def：使用类调用为函数，使用实例化对象调用为方法
@@ -782,7 +604,7 @@ True
 True
 ```
 
-### 44.python实现接口 ？
+### 32.python实现接口 ？
 
 接口只是定义了一些方法，而没有去实现，多用于程序设计时，只是设计需要有什么样的功能，但是并没有实现任何功能，这些功能需要被另一个类（B）继承后，由 类B去实现其中的某个功能或全部功能。
 
@@ -798,18 +620,18 @@ True
 方法一：用抽象类和抽象函数实现方法（适用于单继承）
 方法二：用普通类定义接口（推荐）
 
-### 45.Python 中的反射了解么?
+### 33.Python 中的反射了解么?
 在Python中，能够通过一个对象，找出其type、class、attribute或method的能力，称为反射或自省
 具有反射能力的函数有type(),isinstance(),callable().dir().getattr()等
 
-### 46.metaclass or type
+### 34.metaclass or type
 https://www.liaoxuefeng.com/wiki/897692888725344/923030550637312
 
-### 47.Python中递归的最大次数1000 ?怎么改
+### 35.Python中递归的最大次数1000 ?怎么改
 import sys
 sys.setrecursionlimit(1500) # set the maximum depth as 1500
 
-### 48.列举 5 个 Python 中的异常类型以及其含义
+### 36.列举 5 个 Python 中的异常类型以及其含义
 ```
 BaseException
  +-- SystemExit
@@ -876,7 +698,7 @@ BaseException
            +-- BytesWarning
            +-- ResourceWarning
 ```
-### 49.w、a+、wb 文件写入模式的区别
+### 37.w、a+、wb 文件写入模式的区别
 r : 读取文件，若文件不存在则会报错<br>
 w: 写入文件，若文件不存在则会先创建再写入，会覆盖原文件<br>
 a : 写入文件，若文件不存在则会先创建再写入，但不会覆盖原文件，而是追加在文件末尾<br>
@@ -885,19 +707,19 @@ r+ : 可读、可写，文件不存在也会报错，写操作时会覆盖<br>
 w+ : 可读，可写，文件不存在先创建，会覆盖<br>
 a+ ：可读、可写，文件不存在先创建，不会覆盖，追加在末尾
 
-### 50.举例 sort 和 sorted 的区别
+### 38.举例 sort 和 sorted 的区别
 使用sort()方法对list排序会修改list本身,不会返回新list，sort()不能对dict字典进行排序；
 
 sorted方法对可迭代的序列排序生成新的序列，对dict排序默认会按照dict的key值进行排序，最后返回的结果是一个对key值排序好的list；
 
 sorted对tuple， dict依然有效，而sort不行
 
-### 51.在 requests 模块中，requests.content 和 requests.text 什么区别
+### 39.在 requests 模块中，requests.content 和 requests.text 什么区别
 .content中间存的是字节码 .text存的是.content编码后的字符串
 
 操作方式就是，如果想取得文本就用.text，如果想获取图片，就用.content
 
-### 52.python新式类和经典类的区别
+### 40.python新式类和经典类的区别
 这2篇文章很好的介绍了新式类的特性:
 
 新式类多继承搜索顺序(广度优先)：先在水平方向查找，然后再向上查找
@@ -907,7 +729,7 @@ sorted对tuple， dict依然有效，而sort不行
 http://stackoverflow.com/questions/54867/what-is-the-difference-between-old-style-and-new-style-classes-in-python
 http://www.cnblogs.com/btchenguang/archive/2012/09/17/2689146.html
 
-### 53.字符串的操作题目
+### 41.字符串的操作题目
 全字母短句 PANGRAM 是包含所有英文字母的句子，比如：A QUICK BROWN FOX JUMPS OVER THE LAZY DOG. 定义并实现一个方法 get_missing_letter, 传入一个字符串采纳数，返回参数字符串变成一个 PANGRAM 中所缺失的字符。应该忽略传入字符串参数中的大小写，返回应该都是小写字符并按字母顺序排序（请忽略所有非 ACSII 字符）
 
 **下面示例是用来解释，双引号不需要考虑:**
@@ -938,14 +760,14 @@ def get_missing_letter(a):
 print(get_missing_letter("python"))
 ```
 
-### 54.可变类型和不可变类型
+### 42.可变类型和不可变类型
 1,可变类型有list,dict.不可变类型有string，number,tuple.
 
 2,当进行修改操作时，可变类型传递的是内存中的地址，也就是说，直接修改内存中的值，并没有开辟新的内存。
 
 3,不可变类型被改变时，并没有改变原内存地址中的值，而是开辟一块新的内存，将原地址中的值复制过去，对这块新开辟的内存中的值进行操作。
 
-### 55.is和==有什么区别？
+### 43.is和==有什么区别？
 a = 1024
 b = 1024
 a is b >False
@@ -953,13 +775,13 @@ a == b > True
 is：比较的是两个对象的id值是否相等，也就是比较俩对象是否为同一个实例对象。是否指向同一个内存地址
 
 == ： 比较的两个对象的内容/值是否相等，默认会调用对象的eq()方法
-### 56.求出列表所有奇数并构造新列表
+### 44.求出列表所有奇数并构造新列表
 ```python
 a = [1,2,3,4,5,6,7,8,9,10]
 res = [ i for i in a if i%2==1]
 print(res)
 ```
-### 57.用一行python代码写出1+2+3+10248
+### 45.用一行python代码写出1+2+3+10248
 ```python
 from functools import reduce
 #1.使用sum内置求和函数
@@ -969,7 +791,7 @@ print(num)
 num1 = reduce(lambda x,y :x+y,[1,2,3,10248])
 print(num1)
 ```
-### 58.Python中变量的作用域？（变量查找顺序)
+### 46.Python中变量的作用域？（变量查找顺序)
 函数作用域的LEGB顺序
 
 1.什么是LEGB?
@@ -983,7 +805,7 @@ G: global 全局作用域
 B： build-in 内置作用
 
 python在函数里面的查找分为4种，称之为LEGB，也正是按照这是顺序来查找的
-### 59.字符串 `"123"` 转换成 `123`，不使用内置api，例如 `int()`
+### 47.字符串 `"123"` 转换成 `123`，不使用内置api，例如 `int()`
 方法一： 利用 `str` 函数
 ```python
 def atoi(s):
@@ -1018,7 +840,7 @@ from functools import reduce
 def atoi(s):
     return reduce(lambda num, v: num * 10 + ord(v) - ord('0'), s, 0)
 ```
-### 60.Given an array of integers
+### 48.Given an array of integers
 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。示例:给定nums = [2,7,11,15],target=9 因为 nums[0]+nums[1] = 2+7 =9,所以返回[0,1]
 ```python
 def two_sum(nums, target):
@@ -1036,6 +858,174 @@ target = 9
 nums = two_sum(nums_all, target)
 print(nums)
 ```
+### 49.有一个jsonline格式的文件file.txt大小约为10K
+```python
+def get_lines():
+    with open('file.txt','rb') as f:
+        return f.readlines()
+
+if __name__ == '__main__':
+    for e in get_lines():
+        process(e) # 处理每一行数据
+```
+现在要处理一个大小为10G的文件，但是内存只有4G，如果在只修改get_lines 函数而其他代码保持不变的情况下，应该如何实现？需要考虑的问题都有那些？
+```python
+def get_lines():
+    with open('file.txt','rb') as f:
+        for i in f:
+            yield i
+```
+Pandaaaa906提供的方法
+```python
+from mmap import mmap
+
+
+def get_lines(fp):
+    with open(fp,"r+") as f:
+        m = mmap(f.fileno(), 0)
+        tmp = 0
+        for i, char in enumerate(m):
+            if char==b"\n":
+                yield m[tmp:i+1].decode()
+                tmp = i+1
+
+if __name__=="__main__":
+    for i in get_lines("fp_some_huge_file"):
+        print(i)
+```
+要考虑的问题有：内存只有4G无法一次性读入10G文件，需要分批读入分批读入数据要记录每次读入数据的位置。分批每次读取数据的大小，太小会在读取操作花费过多时间。
+https://stackoverflow.com/questions/30294146/python-fastest-way-to-process-large-file
+
+### 50.返回该文件夹中所有文件的路径
+```python
+def print_directory_contents(sPath):
+"""
+这个函数接收文件夹的名称作为输入参数
+返回该文件夹中文件的路径
+以及其包含文件夹中文件的路径
+"""
+import os
+for s_child in os.listdir(s_path):
+    s_child_path = os.path.join(s_path, s_child)
+    if os.path.isdir(s_child_path):
+        print_directory_contents(s_child_path)
+    else:
+        print(s_child_path)
+```
+### 51.设计实现遍历目录与子目录，抓取.pyc文件
+第一种方法：
+```python
+import os
+
+def get_files(dir,suffix):
+    res = []
+    for root,dirs,files in os.walk(dir):
+        for filename in files:
+            name,suf = os.path.splitext(filename)
+            if suf == suffix:
+                res.append(os.path.join(root,filename))
+
+    print(res)
+
+get_files("./",'.pyc')
+```
+第二种方法：
+```python
+import os
+
+def pick(obj):
+    if ob.endswith(".pyc"):
+        print(obj)
+
+def scan_path(ph):
+    file_list = os.listdir(ph)
+    for obj in file_list:
+        if os.path.isfile(obj):
+    pick(obj)
+        elif os.path.isdir(obj):
+            scan_path(obj)
+
+if __name__=='__main__':
+    path = input('输入目录')
+    scan_path(path)
+```
+第三种方法
+```python
+from glob import iglob
+
+def func(fp, postfix):
+    for i in iglob(f"{fp}/**/*{postfix}", recursive=True):
+        print(i)
+
+if __name__ == "__main__":
+    postfix = ".pyc"
+    func("K:\Python_script", postfix)
+```
+
+### 52.输入日期， 判断这一天是这一年的第几天？
+```python
+import datetime
+def dayofyear():
+    year = input("请输入年份: ")
+    month = input("请输入月份: ")
+    day = input("请输入天: ")
+    date1 = datetime.date(year=int(year),month=int(month),day=int(day))
+    date2 = datetime.date(year=int(year),month=1,day=1)
+    return (date1-date2).days+1
+```
+### 53.打乱一个排好序的list对象alist？
+```python
+import random
+alist = [1,2,3,4,5]
+random.shuffle(alist)
+print(alist)
+
+# 下面这段代码是shuffle的实现
+items = list(alist)
+for i in xrange(len(alist)):
+    alist[i] = items.pop(self.randrange(len(items)))
+
+```
+### 54.现有字典 d= {'a':24,'g':52,'i':12,'k':33}请按value值进行排序?
+```python
+sorted(d.items(),key=lambda x:x[1])
+```
+### 55.字典推导式
+```python
+# 将字符串 "k:1 |k1:2|k2:3|k3:4"，处理成字典 {k:1,k1:2,...}
+# d = {key:value for (key,value) in iterable}
+d = {k:int(v) for t in str1.split("|") for k, v in (t.split(":"), )}
+```
+### 56.请反转字符串 "aStr"?
+```python
+print("aStr"[::-1])
+```
+### 57.请按alist中元素的age由大到小排序
+```python
+alist = [{'name':'a','age':20},{'name':'b','age':30},{'name':'c','age':25}]
+def sort_by_age(list1):
+    return sorted(alist, key=lambda x:x['age'], reverse=True)
+```
+### 58.下面代码的输出结果将是什么？
+```python
+list = ['a','b','c','d','e']
+print(list[10:])
+```
+代码将输出[],不会产生IndexError错误，就像所期望的那样，尝试用超出成员的个数的index来获取某个列表的成员。例如，尝试获取list[10]和之后的成员，会导致IndexError。然而，尝试获取列表的切片，开始的index超过了成员个数不会产生IndexError，而是仅仅返回一个空列表。这成为特别让人恶心的疑难杂症，因为运行的时候没有错误产生，导致Bug很难被追踪到。
+### 59.写一个列表生成式，产生一个公差为11的等差数列
+```python
+print([x*11 for x in range(10)])
+```
+### 60.给定两个列表，怎么找出他们相同的元素和不同的元素？
+```python
+list1 = [1,2,3]
+list2 = [3,4,5]
+set1 = set(list1)
+set2 = set(list2)
+print(set1 & set2)
+print(set1 ^ set2)
+```
+
 ### 61.统计一个文本中单词频次最高的10个单词？
 ```python
 import re
@@ -2497,10 +2487,5 @@ if __name__ == "__main__":
 ```
 ### 167.set 用 in 时间复杂度是多少，为什么？
 ### 168.列表中有n个正整数范围在[0，1000]，进行排序；
-# 大数据
-## 实战
-### 169.找出1G的文件中高频词
-### 170.一个大约有一万行的文本文件统计高频词
-### 171.怎么在海量数据中找出重复次数最多的一个？
-### 172.判断数据是否在大量数据中
+
 
