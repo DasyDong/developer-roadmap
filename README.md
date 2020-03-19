@@ -26,6 +26,7 @@
     - [Redis](#redis)
 - [CNCF](#cncf)
 - [Python源码原理解析](#python源码原理解析)
+- [Python Fool趣事](#python-fool趣事)
 - [Python基础](#python基础)
     - [Python语言基本](#python语言基本)
         - [3.列出 5 个常用 Python 标准库?](#3列出-5-个常用-python-标准库)
@@ -335,6 +336,9 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 # Python源码原理解析
 [python_analyse.md](./python_analyse.md)
 
+
+# Python Fool趣事
+[python_fool.md](./python_fool.md)
 
 # Python基础
 ## Python语言基本
