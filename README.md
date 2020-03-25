@@ -1,20 +1,4 @@
 - [Star过的Github书籍](#star过的github书籍)
-    - [[stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)](#[stackoverflow上python相关回答整理翻译]https//githubcom/wklken/stackoverflow-py-top-qa)
-    - [[Istio服务网格进阶实战](https://github.com/servicemesher/istio-handbook)](#[istio服务网格进阶实战]https//githubcom/servicemesher/istio-handbook)
-    - [[MasteringGO 中文译本](https://github.com/hantmac/Mastering_Go_ZH_CN)](#[masteringgo-中文译本]https//githubcom/hantmac/mastering_go_zh_cn)
-    - [[设计模式 Golang实现](https://github.com/senghoo/golang-design-pattern)](#[设计模式-golang实现]https//githubcom/senghoo/golang-design-pattern)
-    - [[Algorithms Implemented in GoLang](https://github.com/TheAlgorithms/Go)](#[algorithms-implemented-in-golang]https//githubcom/thealgorithms/go)
-    - [[Python Anti-Patterns](https://github.com/quantifiedcode/python-anti-patterns)](#[python-anti-patterns]https//githubcom/quantifiedcode/python-anti-patterns)
-    - [[Kubernetes Handbook ](https://github.com/feiskyer/kubernetes-handbook)](#[kubernetes-handbook-]https//githubcom/feiskyer/kubernetes-handbook)
-    - [[wtfpython-cn](https://github.com/leisurelicht/wtfpython-cn)](#[wtfpython-cn]https//githubcom/leisurelicht/wtfpython-cn)
-    - [[wtfpython-en](https://github.com/satwikkansal/wtfpython)](#[wtfpython-en]https//githubcom/satwikkansal/wtfpython)
-    - [[fucking-algorithm](https://github.com/labuladong/fucking-algorithm)](#[fucking-algorithm]https//githubcom/labuladong/fucking-algorithm)
-    - [[Python资源大全中文版](https://github.com/jobbole/awesome-python-cn)](#[python资源大全中文版]https//githubcom/jobbole/awesome-python-cn)
-    - [[awesome-python资源大全EN版](https://github.com/vinta/awesome-python)](#[awesome-python资源大全en版]https//githubcom/vinta/awesome-python)
-    - [[Go 入门指南](https://github.com/unknwon/the-way-to-go_ZH_CN)](#[go-入门指南]https//githubcom/unknwon/the-way-to-go_zh_cn)
-    - [[build-your-own-x](https://github.com/danistefanovic/build-your-own-x)](#[build-your-own-x]https//githubcom/danistefanovic/build-your-own-x)
-    - [[Algorithms Python](https://github.com/TheAlgorithms/Python)](#[algorithms-python]https//githubcom/thealgorithms/python)
-    - [[coding-interview-university](https://github.com/jwasham/coding-interview-university)](#[coding-interview-university]https//githubcom/jwasham/coding-interview-university)
 - [值得一看的文章](#值得一看的文章)
     - [两地书](#两地书)
 - [服务发现](#服务发现)
@@ -234,29 +218,44 @@
 
 <!-- /TOC -->
 # Star过的Github书籍
-## [stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)
-## [Istio服务网格进阶实战](https://github.com/servicemesher/istio-handbook)
-## [MasteringGO 中文译本](https://github.com/hantmac/Mastering_Go_ZH_CN)
-## [设计模式 Golang实现](https://github.com/senghoo/golang-design-pattern)
-## [Algorithms Implemented in GoLang](https://github.com/TheAlgorithms/Go)
-## [Python Anti-Patterns](https://github.com/quantifiedcode/python-anti-patterns)
-## [Kubernetes Handbook ](https://github.com/feiskyer/kubernetes-handbook)
-## [wtfpython-cn](https://github.com/leisurelicht/wtfpython-cn)
-## [wtfpython-en](https://github.com/satwikkansal/wtfpython)
-## [fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
-## [Python资源大全中文版](https://github.com/jobbole/awesome-python-cn)
-## [awesome-python资源大全EN版](https://github.com/vinta/awesome-python)
-## [Go 入门指南](https://github.com/unknwon/the-way-to-go_ZH_CN)
-## [build-your-own-x](https://github.com/danistefanovic/build-your-own-x)
-## [Algorithms Python](https://github.com/TheAlgorithms/Python)
-## [coding-interview-university](https://github.com/jwasham/coding-interview-university)
+[stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)
+
+[Istio服务网格进阶实战](https://github.com/servicemesher/istio-handbook)
+
+[MasteringGO 中文译本](https://github.com/hantmac/Mastering_Go_ZH_CN)
+
+[设计模式 Golang实现](https://github.com/senghoo/golang-design-pattern)
+
+[Algorithms Implemented in GoLang](https://github.com/TheAlgorithms/Go)
+
+[Python Anti-Patterns](https://github.com/quantifiedcode/python-anti-patterns)
+
+[Kubernetes Handbook ](https://github.com/feiskyer/kubernetes-handbook)
+
+[wtfpython-cn](https://github.com/leisurelicht/wtfpython-cn)
+
+[wtfpython-en](https://github.com/satwikkansal/wtfpython)
+
+[fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
+
+[Python资源大全中文版](https://github.com/jobbole/awesome-python-cn)
+
+[awesome-python资源大全EN版](https://github.com/vinta/awesome-python)
+
+[Go 入门指南](https://github.com/unknwon/the-way-to-go_ZH_CN)
+
+[build-your-own-x](https://github.com/danistefanovic/build-your-own-x)
+
+[Algorithms Python](https://github.com/TheAlgorithms/Python)
+
+[coding-interview-university](https://github..com/jwasham/coding-interview-university)
 
 
 
 # 值得一看的文章
 
 ## 两地书
-https://www.cnblogs.com/xiexj/p/9108020.html 《两地书》
+[两地书](https://www.cnblogs.com/xiexj/p/9108020.html)
 
 # 服务发现
 
