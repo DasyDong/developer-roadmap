@@ -983,7 +983,7 @@ def scan_path(ph):
     file_list = os.listdir(ph)
     for obj in file_list:
         if os.path.isfile(obj):
-    pick(obj)
+            pick(obj)
         elif os.path.isdir(obj):
             scan_path(obj)
 
@@ -1576,7 +1576,7 @@ Queue.put_nowait(item):相当Queue.put(item,False)
 
 进程间通信Demo:
 ```python
-from multiprocessing import Process.Queue
+from multiprocessing import Process,Queue
 import os,time,random
 #写数据进程执行的代码：
 def write(q):
