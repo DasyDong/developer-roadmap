@@ -26,6 +26,7 @@
     - [MySQL](#mysql)
     - [Redis](#redis)
 - [CNCF](#cncf)
+- [Design Pattern设计模式](#design-pattern设计模式)
 - [Python源码原理解析](#python源码原理解析)
 - [Python Fool趣事](#python-fool趣事)
 - [Python基础](#python基础)
@@ -370,6 +371,9 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 
 # CNCF
 [CNCF](./cncf.md)
+
+# Design Pattern设计模式
+[design_pattern.md](./design_pattern.md)
 
 # Python源码原理解析
 [python_analyse.md](./python_analyse.md)
@@ -2529,5 +2533,3 @@ if __name__ == "__main__":
 ```
 ### 167.set 用 in 时间复杂度是多少，为什么？
 ### 168.列表中有n个正整数范围在[0，1000]，进行排序；
-
-
