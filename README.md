@@ -26,7 +26,8 @@
     - [MySQL](#mysql)
     - [Redis](#redis)
 - [CNCF](#cncf)
-- [Design Pattern设计模式](#design-pattern设计模式)
+- [Design Pattern设计模式理论](#design-pattern设计模式理论)
+- [Design Pattern设计模式实操](#design-pattern设计模式实操)
 - [Python源码原理解析](#python源码原理解析)
 - [Python Fool趣事](#python-fool趣事)
 - [Python基础](#python基础)
@@ -45,7 +46,7 @@
         - [14.例举几个规范 Python 代码风格的工具](#14例举几个规范-python-代码风格的工具)
         - [15.一个编码为 GBK 的字符串 S，要将其转成 UTF-8 编码的字符串，应如何操作？](#15一个编码为-gbk-的字符串-s要将其转成-utf-8-编码的字符串应如何操作)
         - [16.用正则切分字符串去除非符号](#16用正则切分字符串去除非符号)
-        - [17.单引号、双引号、三引号的区别？](#17单引号、双引号、三引号的区别)
+        - [17.单引号、双引号、三引号的区别？](#17单引号双引号三引号的区别)
         - [18.[[1,2],[3,4],[5,6]]一行代码展开该列表，得出[1,2,3,4,5,6]](#18[[12][34][56]]一行代码展开该列表得出[123456])
         - [19.哪些不能作为字典的健](#19哪些不能作为字典的健)
         - [20.如何交换字典 {"A"：1,"B"：2}的键和值？](#20如何交换字典-"a"：1"b"：2的键和值)
@@ -65,7 +66,7 @@
         - [34.metaclass or type](#34metaclass-or-type)
         - [35.Python中递归的最大次数1000 ?怎么改](#35python中递归的最大次数1000-怎么改)
         - [36.列举 5 个 Python 中的异常类型以及其含义](#36列举-5-个-python-中的异常类型以及其含义)
-        - [37.w、a+、wb 文件写入模式的区别](#37w、a、wb-文件写入模式的区别)
+        - [37.w、a+、wb 文件写入模式的区别](#37wawb-文件写入模式的区别)
         - [38.举例 sort 和 sorted 的区别](#38举例-sort-和-sorted-的区别)
         - [39.在 requests 模块中，requests.content 和 requests.text 什么区别](#39在-requests-模块中requestscontent-和-requeststext-什么区别)
         - [40.python新式类和经典类的区别](#40python新式类和经典类的区别)
@@ -97,7 +98,7 @@
         - [66.super函数的具体用法和场景](#66super函数的具体用法和场景)
 - [Python高级](#python高级)
     - [元类](#元类)
-        - [67.Python中类方法、类实例方法、静态方法有何区别？](#67python中类方法、类实例方法、静态方法有何区别)
+        - [67.Python中类方法、类实例方法、静态方法有何区别？](#67python中类方法类实例方法静态方法有何区别)
         - [68.遍历一个object的所有属性，并print每一个属性名？](#68遍历一个object的所有属性并print每一个属性名)
         - [69.写一个类，并让它尽可能多的支持操作符?](#69写一个类并让它尽可能多的支持操作符)
         - [70.介绍Cython，Pypy Cpython Numba各有什么缺点](#70介绍cythonpypy-cpython-numba各有什么缺点)
@@ -176,7 +177,7 @@
         - [133.ORM是什么，ORM的优缺点](#133orm是什么orm的优缺点)
         - [134.查找 Django 项目中的性能瓶颈](#134查找-django-项目中的性能瓶颈)
         - [135.什么是wsgi,uwsgi,uWSGI?](#135什么是wsgiuwsgiuwsgi)
-        - [136.Django、Flask、Tornado的对比？](#136django、flask、tornado的对比)
+        - [136.Django、Flask、Tornado的对比？](#136djangoflasktornado的对比)
         - [137.CORS 和 CSRF的区别？](#137cors-和-csrf的区别)
         - [138.Session,Cookie,JWT的理解](#138sessioncookiejwt的理解)
         - [139.简述Django请求生命周期](#139简述django请求生命周期)
@@ -372,8 +373,12 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 # CNCF
 [CNCF](./cncf.md)
 
-# Design Pattern设计模式
+# Design Pattern设计模式理论
 [design_pattern.md](./design_pattern.md)
+
+# Design Pattern设计模式实操
+[design_pattern](./code/design_pattern/创建型模式-单例模式.py)
+
 
 # Python源码原理解析
 [python_analyse.md](./python_analyse.md)
