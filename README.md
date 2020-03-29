@@ -252,6 +252,7 @@
 
 [coding-interview-university](https://github..com/jwasham/coding-interview-university)
 
+[python-patterns](https://github.com/faif/python-patterns)
 
 
 # 值得一看的文章
