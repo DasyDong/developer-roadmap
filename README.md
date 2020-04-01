@@ -25,6 +25,7 @@
 - [数据库](#数据库)
     - [MySQL](#mysql)
     - [Redis](#redis)
+- [持续交付CICD](#持续交付cicd)
 - [CNCF](#cncf)
 - [Design Pattern设计模式理论](#design-pattern设计模式理论)
 - [Design Pattern设计模式实操](#design-pattern设计模式实操)
@@ -370,6 +371,9 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 
 ## Redis
 [redis.md](./redis.md)
+
+# 持续交付CICD
+[cicd.md](./cicd.md)
 
 # CNCF
 [CNCF](./cncf.md)
