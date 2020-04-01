@@ -20,6 +20,7 @@ Dkron是一个分布式，启动迅速，容错的定时任务系统，支持cro
 Dkron是用Go编写的，它利用Raft协议和Serf的强大功能提供容错性、可靠性和可扩展性，同时保持简单易安装。
 
 ### Dkron-v2整体架构图
+
 ![](./pics/dkron-v2.png)
 
 Dkron每个节点都是由一个web服务、grpc服务、raft服务、serf服务、badger数据库构成。
