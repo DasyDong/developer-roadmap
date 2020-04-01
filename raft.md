@@ -172,4 +172,3 @@ Majority 就是一种 Qunroms 的方式来支持Leader选举，可以防止 spli
 
 2.Paxos和Raft算法
 Paxos 协议和Raft算法都是强一致性协议。Paxos只有两种情况下服务不可用:一是超过半数的 Proposer 异常，二是出现活锁。前者可以通过增加 Proposer 的个数来 降低由于 Proposer 异常影响服务的概率，后者本身发生的概率就极低。最后，只要能与超过半数的 Proposer 通信就可以完成协议流程，协议本身具有较好的容忍网络分区的能力。
-
