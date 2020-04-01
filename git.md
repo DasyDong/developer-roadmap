@@ -506,10 +506,8 @@ $ cat .git/refs/remotes/origin/master
 ca82a6dff817ec66f44342007202690a93763949
 ```
 
-
 ## 维护及数据恢复
 [维护及数据恢复](http://iissnan.com/progit/html/zh/ch9_7.html)
-
 
 # 参考书
 
