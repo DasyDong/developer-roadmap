@@ -23,6 +23,7 @@
     - [Redis](#redis)
 - [持续交付CICD](#持续交付cicd)
 - [CNCF](#cncf)
+- [Istio](#istio)
 - [Design Pattern设计模式理论](#design-pattern设计模式理论)
 - [Design Pattern设计模式实操](#design-pattern设计模式实操)
 - [Python源码原理解析](#python源码原理解析)
@@ -337,6 +338,9 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 
 # CNCF
 [CNCF](./cncf.md)
+
+# Istio
+[Istio](./istio.md)
 
 # Design Pattern设计模式理论
 [design_pattern.md](./design_pattern.md)
