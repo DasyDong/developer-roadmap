@@ -119,13 +119,19 @@ CNCF没有相关的孵化中或者已毕业的项目，根据实际的使用情�
 Runtime这一层可以理解为容器的整个运行环境，是云原生中最核心的部分，它包括了计算、存储、网络三大块：
 
 #### Container Runtime
+
 Docker是最广为人知的容器运行环境，但生产环境下也有一些其他的容器环境在运行。Containerd是满足OCI规范的核心容器运行时，从设计上就是为了嵌入大型系统的。它由Docker Inc公司启动，并且在2017年3月份捐赠给了CNCF。此外，CoreOS的RKT是一个用于在Linux上运行应用程序容器的CLI，也可以作为安全、可组合和基于标准的容器虚拟化运行环境。
+
 #### Cloud-Native Storage
+
 起初，容器为无状态的运行单元，容器最上一层文件系统无法保存其在运行时写入的文件或数据，容器重建或重启后，这些写入的数据将丢失。但随着数据库、消息队列等中间件逐步在容器环境中得到应用，如今用户对容器持久化存储的理解和需求也更加深入和迫切。本文稍后还将对容器存储做更深入的分析。
+
 #### Cloud-Native Network
+
 网络历来是虚拟化技术中最灵活多变的部分，目前，大多数客户使用的主要包括Calico、Flannel、Open vSwitch等方案。
 
 ### 4.Provisioning配置管理
+
 有了物理机或虚拟机后，在运行容器化服务之前，需要为容器准备标准化的基础环境，这就是Provisioning这一层的作用。在Provisioning这一层中，分为以下几个功能组成模块：
 
 #### Automation & Configuration
@@ -133,9 +139,10 @@ Docker是最广为人知的容器运行环境，但生产环境下也有一些�
 用于自动化部署和配置容器运行平台和环境，代表工具和厂商包括Ansible、Chef、Puppet、VMware、OpenStack。
 
 #### Container Registry
-容器镜像库是整个CNCF云原生中的核心部件之一，因为基于容器的运行环境中，所有的应用都需要借助容器镜像库来进行安装和部署。容器镜像库又分为公有和私有，公有的容器镜像库包括docker官方的registry，AWS的Elastic Container Registry，Google的Container Registry等。在私有镜像库中，VMware中国团队主导的Harbor得到了广泛的应用，大量的容器平台目前都基于Harbor构建其镜像仓库。
-#### Security & Compliance
 
+容器镜像库是整个CNCF云原生中的核心部件之一，因为基于容器的运行环境中，所有的应用都需要借助容器镜像库来进行安装和部署。容器镜像库又分为公有和私有，公有的容器镜像库包括docker官方的registry，AWS的Elastic Container Registry，Google的Container Registry等。在私有镜像库中，VMware中国团队主导的Harbor得到了广泛的应用，大量的容器平台目前都基于Harbor构建其镜像仓库。
+
+#### Security & Compliance
 Notary和TUF（The Upgrade Framework）是这个领域两个主要的项目，其中TUF是一个开源的安全标准，Notary是其中一个实现。Notary软件除了确保软件的出处外，它还能保证在未经容器镜像提供者批准的情况下，不会在镜像供应链的任何地方修改镜像内的内容，从而确保从开发到运营的过程中，安全都被无缝统一地嵌入到整个工作流中。
 
 #### Key Management
