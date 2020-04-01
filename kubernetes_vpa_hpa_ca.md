@@ -515,7 +515,6 @@ HPA和VPA依赖于指标和一些历史数据。如果您没有分配足够的�
 
  不要将云提供程序可伸缩性机制与CA混淆。CA在集群内部工作，而云提供商的可扩展性机制（例如AWS内部的ASG）基于节点分配工作。它不知道您的pod或应用程序正在发生什么。一起使用它们会使您的群集不稳定并且难以预测行为。
 
-
 相关链接
 
 [CA Events](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-events-are-emitted-by-ca)
