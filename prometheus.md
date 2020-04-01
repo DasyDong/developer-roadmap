@@ -11,7 +11,6 @@
 # Prometheus
 
 ## IO Doc
-
 [prometheus.io](https://prometheus.io/)
 
 ## 什么是 Prometheus？
