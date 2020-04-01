@@ -108,10 +108,8 @@ http://{ip}:8500/v1/health/service/:service
 ![](./pics/consul-agent.png)
 
 ## 参考
-
 [Homepage](https://www.consul.io/)
 
 [GitHub](https://github.com/hashicorp/consul)
 
 [Consul 快速入门](https://www.jianshu.com/p/e8abae723fbb)
-
