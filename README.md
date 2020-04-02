@@ -6,6 +6,7 @@
     - [etcd](#etcd)
 - [微服务](#微服务)
 - [微服务监控对比](#微服务监控对比)
+- [ServiceMesh](#servicemesh)
 - [Istio](#istio)
 - [Prometheus](#prometheus)
 - [kubernetes](#kubernetes)
@@ -27,6 +28,9 @@
 - [持续交付CICD](#持续交付cicd)
 - [程序员如何成长](#程序员如何成长)
 - [CNCF](#cncf)
+- [聊一聊我们组的OKR](#聊一聊我们组的okr)
+- [怎么做一场优秀的技术演讲](#怎么做一场优秀的技术演讲)
+- [中台](#中台)
 - [Design Pattern设计模式理论](#design-pattern设计模式理论)
 - [Design Pattern设计模式实操](#design-pattern设计模式实操)
 - [Python源码原理解析](#python源码原理解析)
@@ -277,6 +281,9 @@
 # 微服务监控对比
 [monitor](./monitor.md)
 
+# ServiceMesh
+[ServiceMesh](./servicemesh.md)
+
 # Istio
 [Istio](./istio.md)
 
@@ -297,11 +304,9 @@
 ## dkron
 [dkron.md](./dkron.md)
 
-
 # 分布式消息系统
 ## Kafka
 [kafka.md](./kafka.md)
-
 
 # 分布式算法
 ## CAP 定理
@@ -338,7 +343,6 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 # ELK
 [ELK.md](./elk.md)
 
-
 # 数据库
 ## MySQL
 [mysql.md](./mysql.md)
@@ -355,16 +359,23 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 # CNCF
 [CNCF](./cncf.md)
 
+# 聊一聊我们组的OKR
+[OKR](./okr.md)
+
+# 怎么做一场优秀的技术演讲
+[TALK](./talk.md)
+
+# 中台
+[MiddleOffice](./zhongtai.md)
+
 # Design Pattern设计模式理论
 [design_pattern.md](./design_pattern.md)
 
 # Design Pattern设计模式实操
 [design_pattern](./code/design_pattern/创建型模式-单例模式.py)
 
-
 # Python源码原理解析
 [python_analyse.md](./python_analyse.md)
-
 
 # Python Fool趣事
 [python_fool.md](./python_fool.md)
