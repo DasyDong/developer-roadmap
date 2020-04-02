@@ -22,6 +22,7 @@
     - [MySQL](#mysql)
     - [Redis](#redis)
 - [持续交付CICD](#持续交付cicd)
+- [程序员如何成长](#程序员如何成长)
 - [CNCF](#cncf)
 - [Istio](#istio)
 - [Design Pattern设计模式理论](#design-pattern设计模式理论)
@@ -335,6 +336,9 @@ CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。�
 
 # 持续交付CICD
 [cicd.md](./cicd.md)
+
+# 程序员如何成长
+[be_programmer](./be_programmer.md)
 
 # CNCF
 [CNCF](./cncf.md)
