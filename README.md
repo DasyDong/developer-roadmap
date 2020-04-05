@@ -1,6 +1,7 @@
 - [Star过的Github书籍](#star过的github书籍)
 - [值得一看的文章](#值得一看的文章)
     - [两地书](#两地书)
+- [数据结构与算法](#数据结构与算法)
 - [服务发现](#服务发现)
     - [consul](#consul)
     - [etcd](#etcd)
@@ -264,6 +265,9 @@
 
 ## 两地书
 [两地书](https://www.cnblogs.com/xiexj/p/9108020.html)
+
+# 数据结构与算法
+[algorithm.md](./algorithm.md)
 
 # 服务发现
 
