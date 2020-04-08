@@ -11,7 +11,7 @@
 # ELK
 ELK是Elasticsearch、Logstash、Kibana三个开源软件产品首字母的缩写，它们三个通常配合使用，所以被称为ELK Stack，它的架构可以用下面的图片来描述。
 
-![](./pics/microservice/elk.jpg)
+![](../pics/microservice/elk.jpg)
 
 这三个软件的功能也各不相同。
 
@@ -34,7 +34,7 @@ ELK是Elasticsearch、Logstash、Kibana三个开源软件产品首字母的缩�
 * Winlogbeat，用来收集Windows事件日志收据。
 
 Beats将收集到的数据发送到Logstash，经过Logstash解析、过滤后，再将数据发送到Elasticsearch，最后由Kibana展示，架构就变成下面这张图里描述的了。
-![](./pics/microservice/elk1.jpg)
+![](../pics/microservice/elk1.jpg)
 
 # Graphite
 Graphite的组成主要包括三部分：Carbon、Whisper、Graphite-Web，它的架构可以用下图来描述。
@@ -44,7 +44,7 @@ Graphite的组成主要包括三部分：Carbon、Whisper、Graphite-Web，它�
 * Whisper：一个简单的时序数据库，主要作用是存储时间序列数据，可以按照不同的时间粒度来存储数据，比如1分钟1个点、5分钟1个点、15分钟1个点三个精度来存储监控数据。
 
 * Graphite-Web：一个Web App，其主要功能绘制报表与展示，即数据展示。为了保证Graphite-Web能及时绘制出图形，Carbon在将数据写入Whisper存储的同时，会在carbon-cache中同时写入一份数据，Graphite-Web会先查询carbon-cache，如果没有再查询Whisper存储。
-![](./pics/microservice/graphite.jpg)
+![](../pics/microservice/graphite.jpg)
 
 也就是说Carbon负责数据处理，Whisper负责数据存储，Graphite-Web负责数据展示，可见Graphite自身并不包含数据采集组件，但可以接入StatsD等开源数据采集组件来采集数据，再传送给Carbon。
 
@@ -71,7 +71,7 @@ target=sumSeries(products.*.salesPerMinute)
 # TICK
 TICK是Telegraf、InfluxDB、Chronograf、Kapacitor四个软件首字母的缩写，是由InfluxData开发的一套开源监控工具栈，因此也叫作TICK Stack，它的架构可以看用下面这张图来描述。
 
-![](./pics/microservice/tick.jpg)
+![](../pics/microservice/tick.jpg)
 
 从这张图可以看出，其中Telegraf负责数据收集，InfluxDB负责数据存储，Chronograf负责数据展示，Kapacitor负责数据告警。
 
@@ -85,7 +85,7 @@ cpu,host=serverA,region=us_west value=0.64 1434067467100293230
 
 # Prometheus
 还有一种比较有名的时间序数据库解决方案Prometheus，它是一套开源的系统监控报警框架，受Google的集群监控系统Borgmon启发，由工作在SoundCloud的Google前员工在2012年创建，后来作为社区开源项目进行开发，并于2015年正式发布，2016年正式加入CNCF（Cloud Native Computing Foundation），成为受欢迎程度仅次于Kubernetes的项目，它的架构可以用下图来描述。
-![](./pics/microservice/prome.jpg)
+![](../pics/microservice/prome.jpg)
 
 从这张图可以看出，Prometheus主要包含下面几个组件：
 

@@ -44,7 +44,7 @@
 利用Horizontal Pod Autoscaling（HPA），kubernetes能够根据监测到的CPU利用率自动的扩缩容 replication controller，deployment和replica set中pod的数量。<br></br>
 HPA作为kubernetes API resource和controller 的实现。Resource确定controller的行为。Controller 会根据监测到用户指定的目标的 CPU 利用率周期性地调整 replication controller 或 deployment 的 replica 数量。
 
-![image](./pics/k8s/hpa-logic.png)
+![image](../pics/k8s/hpa-logic.png)
 
 HPA由一个控制循环实现，循环周期由controller manager 中的 --horizontal-pod-autoscaler-sync-period标志指定。在每个周期内，controller manager会查询HPA中定义的metric的资源利用率。Controller manager 从 resource metric API（每个 pod 的 resource metric）或者自定义 metric API（所有的metric）中获取 metric。
 
@@ -323,7 +323,7 @@ Support custom scheduling
 Predictive autoscaling
 
 ### Cluster Autoscaler架构
-![k8s-ca](./pics/k8s/k8s-ca.png "k8s-ca")
+![k8s-ca](../pics/k8s/k8s-ca.png "k8s-ca")
 
 autoscaler：核心模块，负责整体扩缩容功能
 Estimator：负责评估计算扩容
@@ -331,7 +331,7 @@ Simulator：负责模拟调度，计算缩容
 Cloud Provider：抽象了CloudProvider及NodeGroup等相关接口，与云API交互
 
 ### 扩容流程
-![k8s-ca-up](./pics/k8s/k8s-ca-up.png "k8s-ca-up")
+![k8s-ca-up](../pics/k8s/k8s-ca-up.png "k8s-ca-up")
 
 Cluster autoscaler每10s检查是否有pod处于pending状态
 当发现有pod由于资源不足而处于pending状态，Cluster Autoscaler准备进行node的储备
@@ -347,7 +347,7 @@ CA metrics
 /health-check
 
 ### CA集群状态检查
-![k8s-cluster](./pics/k8s/k8s-cluster.png "k8s-cluster")
+![k8s-cluster](../pics/k8s/k8s-cluster.png "k8s-cluster")
 
 /var/log/cluster-autoscaler.log
 
@@ -393,20 +393,20 @@ spec:
 
 ## CA代码逻辑解析
 ### CA 时序图
-![ca](./pics/k8s/k8s-ca-logic.png)
+![ca](../pics/k8s/k8s-ca-logic.png)
 
 
 ### CA scaldown流程图
-![ScaleDown](./pics/k8s/k8s-scaledown-2.png)
+![ScaleDown](../pics/k8s/k8s-scaledown-2.png)
 
 
 ### CA scalup流程图
 
-![ScaleUp](./pics/k8s/k8s-scale-up.png)
+![ScaleUp](../pics/k8s/k8s-scale-up.png)
 
 
 ### cloudprovider 简单版流程图
-![CA](./pics/k8s/paas-ca.png)
+![CA](../pics/k8s/paas-ca.png)
 
 
 # kubernetes cluster autoscaler调研与hpa/vpa联动
@@ -422,7 +422,7 @@ Kubernetes的autoscaler分成两个层次:
 扩容pod的副本数，通过容器的CPU以及Ｍemory来触发扩容或者缩容操作，并且支持自定义指标、多个指标甚至是外部的指标来作为触发扩容或者缩容操作的条件。
 HPA的工作流
 
-![hpa](./pics/k8s/hpa.png 'hpa')
+![hpa](../pics/k8s/hpa.png 'hpa')
 
 * HPA每隔30sec来检查指标的值
 * 如果SPECIFIFD 阈值满足条件将会增加pod副本的数量
@@ -449,7 +449,7 @@ VPA还有一个名为VPA Recommender的有趣功能。它监视所有pod的历�
 
 VPA工作流
 
-![vpa](./pics/k8s/vpa.png 'vpa')
+![vpa](../pics/k8s/vpa.png 'vpa')
 
 
 VPA每隔１０ｓ检查指标的值
@@ -468,7 +468,7 @@ VPA每隔１０ｓ检查指标的值
 Cluster Autoscaler（CA）根据pending状态的pod来扩展您的群集节点。它会定期检查是否有pending状态的pod，如果需要更多资源并且扩展后的群集仍在用户提供的约束范围内，则会增加群集的大小。CA与云提供商接口以请求更多节点或释放空闲节点。它适用于GCP，AWS和Azure。版本1.0（GA）与kubernetes 1.8一起发布。
 
 CA工作流
-![ca](./pics/k8s/ca.png 'ca')
+![ca](../pics/k8s/ca.png 'ca')
 
 * CA每隔10s检查以下pending状态的容器
 * 如果存在因为资源不足导致pending状态的pod存在的时候，尝试创建一个或多个nodes
@@ -487,7 +487,7 @@ CA使用的时候注意事项
 Kubernetes autoscalers交互一起怎么工作
 如果您希望自动扩展您的Kubernetes集群，则需要在CA中使用pod层自动缩放器。他们彼此合作的方式相对简单，如下图所示。
 
-![ca-hpa-vpa](./pics/k8s/ca-hpa-vpa.png 'ca-hpa-vpa')
+![ca-hpa-vpa](../pics/k8s/ca-hpa-vpa.png 'ca-hpa-vpa')
 
 * HPA或者VPA来更新已经存在的pod副本数或者使用的resources
 * 如果没有足够的节点在可伸缩性事件后运行pod，则CA会发现部分或全部已缩放的pod处于挂起状态的事实。

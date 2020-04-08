@@ -95,7 +95,7 @@ XML配置方式多用作RPC协议的服务描述，通过*.xml配置文件来定
 
 IDL文件方式通常用作Thrift和gRPC这类跨语言服务调用框架中，比如gRPC就是通过Protobuf文件来定义服务的接口名、参数以及返回值的数据结构
 
-![](./pics/microservice/diff.jpg)
+![](../pics/microservice/diff.jpg)
 
 ## 注册中心
 有了服务的接口描述，下一步要解决的问题就是服务的发布和订阅，就是说你提供了一个服务，如何让外部想调用你的服务的人知道。这个时候就需要一个类似注册中心的角色，服务提供者将自己提供的服务以及地址登记到注册中心，服务消费者则从注册中心查询所需要调用的服务的地址，然后发起请求。
@@ -172,7 +172,7 @@ RPC Client从本地缓存的服务节点列表中，基于负载均衡算法选�
 
 采用应用内注册与发现的方式，最典型的案例要属Netflix开源的Eureka，官方架构图如下。
 
-![](./pics/microservice/eureka.jpg)
+![](../pics/microservice/eureka.jpg)
 
 对着这张图，我来介绍下Eureka的架构，它主要由三个重要的组件组成：
 
@@ -184,7 +184,7 @@ Eureka Server：注册中心的服务端，实现了服务信息注册、存储�
 
 采用应用外方式实现服务注册和发现，最典型的案例是开源注册中心Consul，它的架构图如下。
 
-![](./pics/microservice/consul.jpg)
+![](../pics/microservice/consul.jpg)
 
 通过这张架构图，可以看出来使用Consul实现应用外服务注册和发现主要依靠三个重要的组件：
 
@@ -243,7 +243,7 @@ Consul Template：定时从注册中心服务端获取最新的服务提供者�
 
 首先看下面这张图，我来给你讲解下服务追踪系统中几个最基本概念。
 
-![](./pics/microservice/trace.jpg)
+![](../pics/microservice/trace.jpg)
 
 *  traceId，用于标识某一次具体的请求ID。当用户的请求进入系统后，会在RPC调用网络的第一层生成一个全局唯一的traceId，并且会随着每一层的RPC调用，不断往后传递，这样的话通过traceId就可以把一次用户请求在系统中调用的路径串联起来。
 
@@ -253,7 +253,7 @@ Consul Template：定时从注册中心服务端获取最新的服务提供者�
 
 ### 架构
 
-![](./pics/microservice/arture.jpg)
+![](../pics/microservice/arture.jpg)
 
 * 数据采集层，负责数据埋点并上报。
 
@@ -343,7 +343,7 @@ FailFast：快速失败。就是服务消费者调用一次失败后，不再重
 
 ## 平台化
 
-![](./pics/microservice/platform.jpg)
+![](../pics/microservice/platform.jpg)
 
 1. 服务管理
 

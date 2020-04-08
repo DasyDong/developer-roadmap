@@ -27,24 +27,24 @@ https://leetcode-cn.com/
 这里就贴一下算法的技巧吧，
 
 ## BFS:
-![](./pics/algorithm/bfs.png)
+![](../pics/algorithm/bfs.png)
 
 ## DFS:
-![](./pics/algorithm/dfs.png)
+![](../pics/algorithm/dfs.png)
 
 ## recursion:
-![](./pics/algorithm/recursion.png)
+![](../pics/algorithm/recursion.png)
 
 ## binary search:
-![](./pics/algorithm/search.png)
+![](../pics/algorithm/search.png)
 
 ## DP:
-![](./pics/algorithm/DP.png)
+![](../pics/algorithm/DP.png)
 
 ## DP-summary:
-![](./pics/algorithm/dp-summary.png)
+![](../pics/algorithm/dp-summary.png)
 
 ## 总结1:
-![](./pics/algorithm/alg1.jpg)
+![](../pics/algorithm/alg1.jpg)
 
 ## 未完

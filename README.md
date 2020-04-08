@@ -13,84 +13,84 @@
 
 # Python
 
-* [Python150面试题](./python_interview.md)
+* [Python150面试题](./notes/python_interview.md)
 
-* [Python源码原理解析](./python_analyse.md)
+* [Python源码原理解析](./notes/python_analyse.md)
 
-* [Python Fool趣事](./python_fool.md)
+* [Python Fool趣事](./notes/python_fool.md)
 
-* [爬虫](./spider.md)
+* [爬虫](./notes/spider.md)
 
 
 # 算法
 
-* [算法5种解题模板](./algorithm.md)
+* [算法5种解题模板](./notes/algorithm.md)
 
-* [常见算法python实现](./algorithm_code.md)
+* [常见算法python实现](./notes/algorithm_code.md)
 
 # 面向对象
 
-* [Design Pattern设计模式理论](./design_pattern.md)
+* [Design Pattern设计模式理论](./notes/design_pattern.md)
 
-* [Design Pattern设计模式实操](./code/design_pattern/创建型模式-单例模式.py)
+* [Design Pattern设计模式实操](./notes/code/design_pattern/创建型模式-单例模式.py)
 
 # 云原生
 
-* [CNCF](./cncf.md)
+* [CNCF](./notes/cncf.md)
 
-* [微服务](./microservice.md)
+* [微服务](./notes/microservice.md)
 
-* [微服务监控对比](./monitor.md)
+* [微服务监控对比](./notes/monitor.md)
 
-* [consul](./consul.md)
+* [consul](./notes/consul.md)
 
-* [etcd](./etcd.md)
+* [etcd](./notes/etcd.md)
 
-* [ServiceMesh](./servicemesh.md)
+* [ServiceMesh](./notes/servicemesh.md)
 
-* [Istio](./istio.md)
+* [Istio](./notes/istio.md)
 
-* [prometheus.md](./prometheus.md)
+* [prometheus.md](./notes/prometheus.md)
 
-* [kubernetes架构](./kubernetes.md)
+* [kubernetes架构](./notes/kubernetes.md)
 
-* [VPA-HPA-CA弹性扩缩容](./kubernetes_vpa_hpa_ca.md)
+* [VPA-HPA-CA弹性扩缩容](./notes/kubernetes_vpa_hpa_ca.md)
 
-* [持续交付.md](./cicd.md)
+* [持续交付.md](./notes/cicd.md)
 
 # 分布式
 
-* [基于GO的dkron](./dkron.md)
+* [基于GO的dkron](./notes/dkron.md)
 
-* [分布式消息系统kafka.md](./kafka.md)
+* [分布式消息系统kafka.md](./notes/kafka.md)
 
-* [CAP](./cap.md)
+* [CAP](./notes/cap.md)
 
-* [raft算法](./raft.md)
+* [raft算法](./notes/raft.md)
 
 # 数据库
-* [MySQL](./mysql.md)
+* [MySQL](./notes/mysql.md)
 
-* [Redis](./redis.md)
+* [Redis](./notes/redis.md)
 
 # 计算机
 
-* [网络](./git.md)
+* [网络](./notes/git.md)
 
-* [HTTP](./elk.md)
+* [HTTP](./notes/elk.md)
 
-* [Git](./git.md)
+* [Git](./notes/git.md)
 
-* [ELK.md](./elk.md)
+* [ELK.md](./notes/elk.md)
 
 # 大话
-* [程序员如何成长](./be_programmer.md)
+* [程序员如何成长](./notes/be_programmer.md)
 
-* [聊一聊我们组的OKR](./okr.md)
+* [聊一聊我们组的OKR](./notes/okr.md)
 
-* [怎么做一场优秀的技术演讲](./talk.md)
+* [怎么做一场优秀的技术演讲](./notes/talk.md)
 
-* [中台](./zhongtai.md)
+* [中台](./notes/zhongtai.md)
 
 # 推荐
 * [stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)

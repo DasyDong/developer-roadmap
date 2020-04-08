@@ -35,7 +35,7 @@ AVL是严格平衡树，因此在增加或者删除节点的时候，根据不�
 
 ### 2.基本排序算法汇总(桶排序,归并,快排,希尔,插入,选择,冒泡)
 
-![](./pics/python/all_sort.png)
+![](../pics/python/all_sort.png)
 
 https://blog.csdn.net/mrlevo520/article/details/77829204
 https://blog.csdn.net/stdio1916/article/details/90485867

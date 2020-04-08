@@ -146,7 +146,7 @@ Cache 缓存（如：Redis、Memcached）
 
 
 # 修炼
-![](./pics/programmer/pipeline.jpg)
+![](../pics/programmer/pipeline.jpg)
 
 ## 软件生命周期
 1、问题定义 <br>
@@ -211,7 +211,7 @@ Cache 缓存（如：Redis、Memcached）
 ## 路径
 走完初级， 要经历一些更专业的学习了
 
-![](./pics/programmer/opensource.jpg)
+![](../pics/programmer/opensource.jpg)
 
 
 ## 别怕失败， 尽情实验
@@ -220,7 +220,7 @@ Cache 缓存（如：Redis、Memcached）
 
 
 ## 提升效率
-![](./pics/programmer/efficiency.jpg)
+![](../pics/programmer/efficiency.jpg)
 
 ## 转化
 走完修炼的过程， 下一阶段就是进阶了，是适合行程一套自己的技术体系或者技术领域了 ，然后向技术圈或者团队转化自己的技能输出
@@ -249,13 +249,13 @@ Cache 缓存（如：Redis、Memcached）
 ## 选择？
 程序员过了一定阶段， 就又到了通常大家所说的是选择管理岗位还是继续技术， 这个东西不是非黑即白， 通常是两者共存
 
-![](./pics/programmer/architect.jpg)
+![](../pics/programmer/architect.jpg)
 
-![](./pics/programmer/work.jpg)
+![](../pics/programmer/work.jpg)
 
 
 ## 蓝图
-![](./pics/programmer/blue.jpg)
+![](../pics/programmer/blue.jpg)
 
 图中描述了好几个阶段，从一个阶段到下一个阶段，都会经历一次转折。
 

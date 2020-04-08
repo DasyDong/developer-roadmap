@@ -21,7 +21,7 @@ Dkron是用Go编写的，它利用Raft协议和Serf的强大功能提供容错�
 
 ### Dkron-v2整体架构图
 
-![](./pics/dkron-v2.png)
+![](../pics/dkron-v2.png)
 
 Dkron每个节点都是由一个web服务、grpc服务、raft服务、serf服务、badger数据库构成。
 
@@ -38,7 +38,7 @@ Dkron的每个节点在运行的服务上都是相同的，但存在一个仲裁
 当leader的调度器检查到将有任务需要执行时，它会发一个serf的消息，serf会随机发送给任意一个节点去执行，当执行完成后会通知leader的执行结果，并写进数据库。
 
 ### job执行流程图
-![](./pics/dkron-job.png)
+![](../pics/dkron-job.png)
 
 在leader节点处，当job schedule的任务触发时，leader发送一个serf消息（1-serf msg），serf会随机选择一个节点发送。当收到serf发送的执行job的消息后，节点会启动一个协程去运行job（2-run job），接着返回给serf收到运行消息并正在执行任务的响应（3-serf msg resp）。
 

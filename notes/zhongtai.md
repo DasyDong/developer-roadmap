@@ -21,7 +21,7 @@
 
 业务中台就是在产生数据，数据中台是做数据的二次加工，并将结果再服务于业务，为业务进行数据和智能的赋能
 
-![](./pics/zhongtai/zt_type.jpg)
+![](../pics/zhongtai/zt_type.jpg)
 
 非主流系列
 在业务数据双中台之外，还出现过各式各样的中台，而这些中台的出现也让原本还比较清晰的中台概念变得有些模糊。那接下来我就快速为你介绍一些这几年我所接触过的中台，在我讲述的过程中，你也可以思考一下，这些中台中哪些是李逵，而哪些是李鬼，谁才真正配得上中台的称号，谁又是来蹭流量的。
@@ -46,7 +46,7 @@
 
 ## 设计中台 D4模型
 
-![](./pics/zhongtai/d4.jpg)
+![](../pics/zhongtai/d4.jpg)
 
 
 第一个阶段是Discovery 帮助我们在中台规划前先建立全局视野。在这个过程中我们以企业愿景和战略为输入，结合行业趋势、竞争对手分析、用户客群分析 、业务现状分析、IT资产盘点，全方位多角度地理解企业的战略市场环境以及业务及IT全貌，帮助我们做出最正确的判断。
@@ -57,19 +57,19 @@
 
 第四个阶段就是Delivery，这个时候我们就可以针对一个设计好的中台，开始具体的交付过程，我们采用的是敏捷结合精益软件开发的方式，用快速迭代和基于反馈的调整，最大程度地弥补由中台建设本身的复杂度带来的设计偏差和其他的交付问题，并且注重架构的治理与守护，减少实现与设计的偏离。
 
-![](./pics/zhongtai/d42.jpg)
+![](../pics/zhongtai/d42.jpg)
 
 ## Discovery企业战略分解及现状调研
 
-![](./pics/zhongtai/discovery.jpg)
+![](../pics/zhongtai/discovery.jpg)
 
 ## Define企业数字化全景规划
-![](./pics/zhongtai/define.jpg)
+![](../pics/zhongtai/define.jpg)
 
 ## Design中台的规划与设计
-![](./pics/zhongtai/design.jpg)
+![](../pics/zhongtai/design.jpg)
 
 ## Delivery中台的建设与接入
-![](./pics/zhongtai/delivery.jpg)
+![](../pics/zhongtai/delivery.jpg)
 
 

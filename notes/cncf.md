@@ -62,7 +62,7 @@ Cloud Native 具备有以下特性：
 
 CNCF Landscape路线图
 CNCF Landscape最重要的产出包括一个路线图和一个全景图。路线图（Trail Map）是CNCF对云原生用户使用开源项目以及云原生技术的推荐过程。在路线图的每个步骤中，用户都可以选择供应商支持的产品或自己动手使用开源项目。
-![](./pics/cncf/trailmap.png)
+![](../pics/cncf/trailmap.png)
 
 
 整个路线图分成了十个步骤，每个步骤都是用户或平台开发者将云原生技术在实际环境中落地时，需要循序渐进思考和处理的问题：
@@ -90,7 +90,7 @@ CNCF Landscape最重要的产出包括一个路线图和一个全景图。路线
 
 ## CNCF Landscape全景图
 [CNCF Landscape](https://landscape.cncf.io/) 路线图 从实践步骤上帮助用户梳理了整个云原生应用的最佳流程。然而整个实践过程中的每个环节，用户都需要了解有哪些具体的软件和产品选择，这就是CNCF Landscape全景图发挥作用的地方了
-![](./pics/cncf/landscape.png)
+![](../pics/cncf/landscape.png)
 
 这张全景图试图从云原生的层次结构，以及不同的功能组成上，让用户了解云原生体系的全貌，并帮助用户在不同组件层次去选择恰当的软件和工具进行支持。从总体来看，它将云原生生态分为以下几层：
 

@@ -46,7 +46,7 @@ Etcd 是 CoreOS 基于 Raft 开发的分布式 key-value 存储，可用于服�
 
 推荐在 Kubernetes 集群中使用 Etcd v3，v2 版本已在 Kubernetes v1.11 中弃用。
 
-![etcdv3](./pics/etcd-v3.png)
+![etcdv3](../pics/etcd-v3.png)
 
 Etcd v3 将 watch 和 store 拆开实现，我们先分析下 store 的实现。
 
