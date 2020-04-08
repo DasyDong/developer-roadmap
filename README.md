@@ -4,6 +4,7 @@
 ![](https://badgen.net/github/stars/dasydong/interview)&nbsp;
 ![](https://badgen.net/github/forks/dasydong/interview)&nbsp;
 ![](https://img.shields.io/github/repo-size/dasydong/interview?color=orange)&nbsp;
+![](https://badgen.net/github/last-commit/dasydong/interview)&nbsp;
 <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/22369?icon=github&color=4ab8a1"></a>
 
 | &nbsp; Python &nbsp; | 算法 | &nbsp;面向对象&nbsp;|&nbsp;&nbsp;&nbsp;云原生&nbsp;&nbsp;&nbsp;|         分布式| &nbsp;&nbsp;&nbsp;数据库&nbsp;&nbsp;&nbsp;  |计算机  |大话|&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;|
@@ -28,6 +29,15 @@
 
 * [常见算法python实现](./notes/algorithm_code.md)
 
+* [fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
+
+* [Algorithms Implemented in GoLang](https://github.com/TheAlgorithms/Go)
+
+* [Algorithms Python](https://github.com/TheAlgorithms/Python)
+
+* [bigo算法](https://www.bigocheatsheet.com/)
+
+
 # 面向对象
 
 * [Design Pattern设计模式理论](./notes/design_pattern.md)
@@ -50,13 +60,13 @@
 
 * [Istio](./notes/istio.md)
 
-* [prometheus.md](./notes/prometheus.md)
+* [prometheus](./notes/prometheus.md)
 
 * [kubernetes架构](./notes/kubernetes.md)
 
 * [VPA-HPA-CA弹性扩缩容](./notes/kubernetes_vpa_hpa_ca.md)
 
-* [持续交付.md](./notes/cicd.md)
+* [持续交付](./notes/cicd.md)
 
 # 分布式
 
@@ -101,8 +111,6 @@
 
 * [设计模式 Golang实现](https://github.com/senghoo/golang-design-pattern)
 
-* [Algorithms Implemented in GoLang](https://github.com/TheAlgorithms/Go)
-
 * [Python Anti-Patterns](https://github.com/quantifiedcode/python-anti-patterns)
 
 * [Kubernetes Handbook ](https://github.com/feiskyer/kubernetes-handbook)
@@ -110,8 +118,6 @@
 * [wtfpython-cn](https://github.com/leisurelicht/wtfpython-cn)
 
 * [wtfpython-en](https://github.com/satwikkansal/wtfpython)
-
-* [fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
 
 * [Python资源大全中文版](https://github.com/jobbole/awesome-python-cn)
 
@@ -121,12 +127,9 @@
 
 * [build-your-own-x](https://github.com/danistefanovic/build-your-own-x)
 
-* [Algorithms Python](https://github.com/TheAlgorithms/Python)
-
 * [coding-interview-university](https://github..com/jwasham/coding-interview-university)
 
 * [python-patterns](https://github.com/faif/python-patterns)
 
 * [两地书](https://www.cnblogs.com/xiexj/p/9108020.html)
 
-* [bigo算法](https://www.bigocheatsheet.com/)
