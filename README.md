@@ -7,9 +7,9 @@
 ![](https://badgen.net/github/last-commit/dasydong/interview)&nbsp;
 <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/22369?icon=github&color=4ab8a1"></a>
 
-| &nbsp; Python &nbsp; | 算法 | &nbsp;面向对象&nbsp;|&nbsp;&nbsp;&nbsp;云原生&nbsp;&nbsp;&nbsp;|         分布式| &nbsp;&nbsp;&nbsp;数据库&nbsp;&nbsp;&nbsp;  |计算机  |大话|&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;|
-| :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [🔨](#python) | [🔨](#算法) | [🔨](#面向对象) | [🔨](#云原生) |[🔨](#分布式)| [🔨](#数据库) | [🔨](#计算机)| [🔨](#大话) | [🔨](#推荐)|
+| &nbsp; Python &nbsp; |  &nbsp; 算法  &nbsp; | &nbsp;面向对象&nbsp;|&nbsp;&nbsp;&nbsp;云原生&nbsp;&nbsp;&nbsp;|         分布式| &nbsp;&nbsp;&nbsp;数据库&nbsp;&nbsp;&nbsp;  | &nbsp; 计算机 &nbsp;   | &nbsp; 大话 &nbsp; |&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;|  &nbsp; 工具包 &nbsp;
+| :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| [🔨](#python) | [🔨](#算法) | [🔨](#面向对象) | [🔨](#云原生) |[🔨](#分布式)| [🔨](#数据库) | [🔨](#计算机)| [🔨](#大话) | [🔨](#推荐)| [🔨](#工具包)|
 
 
 # Python
@@ -101,6 +101,10 @@
 * [怎么做一场优秀的技术演讲](./notes/talk.md)
 
 * [中台](./notes/zhongtai.md)
+
+# 工具包
+* [norepeat](https://github.com/DasyDong/python-norepeat)
+* [SpellCheck](https://github.com/DasyDong/spell-check-go)
 
 # 推荐
 * [stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)
