@@ -8,6 +8,7 @@
     - [Prometheus 组件内容](#prometheus-组件内容)
     - [工作原理](#工作原理)
     - [推方式和拉方式](#推方式和拉方式)
+- [FYI](#fyi)
 # Prometheus
 
 ## IO Doc
@@ -117,3 +118,21 @@ Prometheus与其他时间序列数据库之间存在明显差异：Prometheus主
 
 Prometheus不是基于事件的系统，这与其他时间序列数据库不同。Prometheus并非旨在及时捕获单个和时间事件（例如服务中断），但它旨在收集有关的服务的预先汇总的指标。具体而言，它不会从Web服务发送404错误消息以及错误的消息的具体内容，而是对这些消息做处理、聚合过的指标。这与其他在收集"原始消息"的时间序列数据库之间的基本差异
 
+
+# FYI
+
+[prometheus-operator](https://github.com/coreos/prometheus-operator)
+
+[kube-prometheus：用operator部署prometheus](https://github.com/coreos/kube-prometheus)
+
+[prometheus/client_python](https://github.com/prometheus/client_python)
+
+[thanos](https://github.com/thanos-io/thanos)
+
+[prometheus-book中文](https://github.com/yunlzheng/prometheus-book)
+
+[基于Prometheus构建MySQL可视化监控平台](https://mp.weixin.qq.com/s/fYgKedgYtauD3CA4cQaLEg)
+
+[打造云原生大型分布式监控系统(一):](https://mp.weixin.qq.com/s/QD9dvjBD0pkvdJwpS2999Q)
+
+[打造云原生大型分布式监控系统(二):](https://mp.weixin.qq.com/s/KFPImAanIg11P91zOHFP2w)

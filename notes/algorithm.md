@@ -11,18 +11,13 @@
 
 这一部分就不做总结了， 因为实在太基础又重要，不是几万字能理清楚的。进阶我觉得可以从几方面入手吧， 具体咋玩可以自行选择吧
 
-* Leetcode
-
 http://leetcode.com/
+
 https://leetcode-cn.com/
 
-* Github
 [fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
 
 [Algorithms Python](https://github.com/TheAlgorithms/Python)
-
-* Book/Video
-太多书了就不推荐了
 
 这里就贴一下算法的技巧吧，
 

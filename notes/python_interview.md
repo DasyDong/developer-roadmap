@@ -578,7 +578,7 @@ http://www.cnblogs.com/btchenguang/archive/2012/09/17/2689146.html
 ```python
 def get_missing_letter(a):
     s1 = set("abcdefghijklmnopqrstuvwxyz")
-    s2 = set(a)
+    s2 = set(a.lower())
     ret = "".join(sorted(s1-s2))
     return ret
 

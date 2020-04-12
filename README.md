@@ -18,6 +18,8 @@
 
 * [Python源码原理解析](./notes/python_analyse.md)
 
+* [Python2和3的区别](https://github.com/DasyDong/python3diff2)
+
 * [Python Fool趣事](./notes/python_fool.md)
 
 * [爬虫](./notes/spider.md)
@@ -42,7 +44,7 @@
 
 * [Design Pattern设计模式理论](./notes/design_pattern.md)
 
-* [Design Pattern设计模式实操](./notes/code/design_pattern/创建型模式-单例模式.py)
+* [Design Pattern设计模式实操](./code/design_pattern/创建型模式-单例模式.py)
 
 # 云原生
 
@@ -107,6 +109,11 @@
 * [SpellCheck](https://github.com/DasyDong/spell-check-go)
 
 # 推荐
+
+* [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+
+* [devops-roadmap](https://github.com/raycad/devops-roadmap)
+
 * [stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)
 
 * [Istio服务网格进阶实战](https://github.com/servicemesher/istio-handbook)
@@ -131,9 +138,12 @@
 
 * [build-your-own-x](https://github.com/danistefanovic/build-your-own-x)
 
-* [coding-interview-university](https://github..com/jwasham/coding-interview-university)
+* [coding-interview-university](https://github.com/jwasham/coding-interview-university)
 
 * [python-patterns](https://github.com/faif/python-patterns)
 
 * [两地书](https://www.cnblogs.com/xiexj/p/9108020.html)
 
+* [技术面试最后反问面试官的话](https://github.com/yifeikong/reverse-interview-zh)
+
+* [GitHub中文排行榜](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
