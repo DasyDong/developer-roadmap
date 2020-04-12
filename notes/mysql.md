@@ -10,6 +10,10 @@
         - [9.悲观锁和乐观锁是什么？](#9悲观锁和乐观锁是什么)   
         - [10.你常用的mysql引擎有哪些?各引擎间有什么区别?](#10你常用的mysql引擎有哪些各引擎间有什么区别)   
 # Mysql
+## ORM
+
+## ACID
+
 ### 1.MySQL的四种事务隔离级别
 一、事务的基本要素（ACID）
 
@@ -61,6 +65,10 @@ https://www.cnblogs.com/wyaokai/p/10921323.html
 
 　　 6、关于next-key 锁可以参考链接：https://blog.csdn.net/bigtree_3721/article/details/73731377
 
+## Transaction
+
+## N+1
+
 ### 2.主键 超键 候选键 外键
 超键（super key）：在关系中能惟一标识元素属性的集称为关系模式的超键。
 
@@ -99,8 +107,8 @@ https://www.cnblogs.com/wyaokai/p/10921323.html
    truncate、drop 是数据库定义语言(ddl)，操作立即生效，原数据不放到 rollback segment 中，不能回滚，操作不触发 trigger。
 
 
-
-### 5.索引的工作原理及其种类
+# 索引
+### 索引的工作原理及其种类
 一、概述
 
 在mysql中，索引（index）又叫键（key），它是存储引擎用于快速找到所需记录的一种数据结构。在越来越大的表中，索引是对查询性能优化最有效的手段，索引对性能影响非常关键。另外，mysql的索引是在存储引擎层实现，而不是在服务器层。
