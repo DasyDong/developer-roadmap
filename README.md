@@ -8,21 +8,21 @@
 <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/22369?icon=github&color=4ab8a1"></a>
 
 
-|  &nbsp; &nbsp;互联网 &nbsp;&nbsp; |  &nbsp; &nbsp;前端知识 &nbsp;&nbsp;|  &nbsp;&nbsp; 操作系统 &nbsp;&nbsp;|  &nbsp;&nbsp; 编程语言 &nbsp;&nbsp;|  &nbsp;&nbsp; 数据库  &nbsp; &nbsp;|&nbsp;&nbsp;面向对象&nbsp;&nbsp;| &nbsp;&nbsp; 算法 &nbsp;&nbsp;
-|:----: | :----: | :---: | :----: | :---: | :----: | :----: |
-| [🔨](#互联网) | [🔨](#前端知识) | [🔨](#操作系统) | [🔨](#编程语言) | [🔨](#数据库) | [🔨](#面向对象)| [🔨](#算法)
+|  &nbsp; &nbsp;互联网 &nbsp;&nbsp; |  &nbsp; &nbsp;前端知识 &nbsp;&nbsp;|  &nbsp;&nbsp; 操作系统 &nbsp;&nbsp;|  &nbsp;&nbsp; 编程语言 &nbsp;&nbsp;|  &nbsp;&nbsp; 数据库  &nbsp; &nbsp;|&nbsp;&nbsp;面向对象&nbsp;&nbsp;| &nbsp;&nbsp; 算法 &nbsp;&nbsp;| &nbsp;&nbsp; 贡献 &nbsp;&nbsp;
+|:----: | :----: | :---: | :----: | :---: | :----: | :----: | :----: |
+| [🔨](#互联网) | [🔨](#前端知识) | [🔨](#操作系统) | [🔨](#编程语言) | [🔨](#数据库) | [🔨](#面向对象)| [🔨](#算法)| [🔨](#贡献)
 
-|&nbsp;&nbsp; 云原生 &nbsp;&nbsp;| &nbsp;&nbsp; 分布式 &nbsp;&nbsp;| &nbsp; &nbsp;API &nbsp;&nbsp;|  &nbsp; &nbsp;测试 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;| &nbsp; &nbsp; 工具包&nbsp; &nbsp;|  &nbsp;&nbsp; 大话 &nbsp;&nbsp;|  &nbsp;&nbsp; 免责声明 &nbsp;&nbsp;
-| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [🔨](#云原生)| [🔨](#分布式)| [🔨](#API)| [🔨](#测试)|[🔨](#推荐)| [🔨](#工具包)| [🔨](#大话)|[🔨](#免责声明)|
+|&nbsp;&nbsp; 云原生 &nbsp;&nbsp;| &nbsp;&nbsp; 分布式 &nbsp;&nbsp;| &nbsp; &nbsp;API &nbsp;&nbsp;|  &nbsp; &nbsp;测试 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;| &nbsp; &nbsp; 工具包&nbsp; &nbsp;|  &nbsp;&nbsp; 大话 &nbsp;&nbsp;|  &nbsp;&nbsp; 免责声明 &nbsp;&nbsp;|  &nbsp;&nbsp; 记得Star &nbsp;&nbsp;
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| [🔨](#云原生)| [🔨](#分布式)| [🔨](#API)| [🔨](#测试)|[🔨](#推荐)| [🔨](#工具包)| [🔨](#大话)|[🔨](#免责声明)|[👆⭐]|
 
 ![](./pics/backend-map-c.png)
 # 互联网
 * [互联网是如何工作的](./notes/How-Does-the-Internet-Work.md)
 * [HTTP](./notes/http.md)
 * [DNS](./notes/http.md)
-* [Domain](./notes/domain.md)
-* [CDN](./notes/tuoguan.md)
+* [Domain](./notes/http.md)
+* [CDN](./notes/http.md)
 
 # 前端知识
 * [浏览器和他们是如何工作的](./notes/frontend.md)
@@ -36,8 +36,8 @@
 
 # 编程语言
 * [Python](./notes/python.md)
-* [Go](./notes/go.md)
-* [Java](./notes/java.md)
+* [Go-未添加](./notes/go.md)
+* [Java-未添加](./notes/java.md)
 
 # 数据库
 * [MySQL](./notes/mysql.md)
@@ -45,7 +45,7 @@
     * [ACID](./notes/mysql.md)
     * [N+1](./notes/mysql.md)
     * [Index索引](./notes/mysql.md)
-* [MongoDB](./notes/mongodb.md)
+* [MongoDB-未添加](./notes/mongodb.md)
 * [Redis](./notes/redis.md)
 
 # 算法
@@ -56,7 +56,6 @@
 * [Algorithms Implemented in GoLang](https://github.com/TheAlgorithms/Go)
 * [Algorithms Python](https://github.com/TheAlgorithms/Python)
 * [bigo算法](https://www.bigocheatsheet.com/)
-
 
 # 面向对象
 * [Design Pattern设计模式理论](./notes/design_pattern.md)
