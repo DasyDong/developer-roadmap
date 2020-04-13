@@ -126,7 +126,8 @@
 
 # 免责声明
 
-文中后端路线图由 Alikhll (Ali Khalili) 制作，由 BON 翻译为中文。原仓库链接为： [Alikhll/golang-developer-roadmap](https://github.com/Alikhll/golang-developer-roadmap)
+文中后端路线图由 kamranahmedse制作原仓库链接为： [kamranahmedse
+/developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
 
 本文是根据后端研发路线路图做的总结和扩展， 此文档目的是让您了解大致的学习内容。路线图会在您对接下来要学习什么感到困惑的时候给您适当的指导，部分总结内容只能相当于QuickLook。如果想某一点深入，请Google到底
 
