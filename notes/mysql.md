@@ -1,20 +1,53 @@
 - [Mysql](#mysql)   
-        - [1.MySQL的四种事务隔离级别](#1mysql的四种事务隔离级别)   
-        - [2.主键 超键 候选键 外键](#2主键-超键-候选键-外键)   
-        - [3.视图的作用，视图可以更改么？](#3视图的作用视图可以更改么)   
-        - [4.drop,delete与truncate的区别](#4dropdelete与truncate的区别)   
-        - [5.索引的工作原理及其种类](#5索引的工作原理及其种类)   
-        - [6.连接的种类](#6连接的种类)   
-        - [7.数据库优化的思路](#7数据库优化的思路)   
-        - [8.存储过程与触发器的区别](#8存储过程与触发器的区别)   
-        - [9.悲观锁和乐观锁是什么？](#9悲观锁和乐观锁是什么)   
-        - [10.你常用的mysql引擎有哪些?各引擎间有什么区别?](#10你常用的mysql引擎有哪些各引擎间有什么区别)   
+    - [ORM](#orm)
+    - [ACID](#acid)
+        - [MySQL的四种事务隔离级别](#mysql的四种事务隔离级别)
+    - [N+1](#n1)
+    - [索引](#索引)
+        - [索引的工作原理及其种类](#索引的工作原理及其种类)
+        - [主键 超键 候选键 外键](#主键-超键-候选键-外键)
+        - [视图的作用，视图可以更改么？](#视图的作用视图可以更改么)
+        - [drop,delete与truncate的区别](#dropdelete与truncate的区别)
+    - [连接的种类](#连接的种类)
+    - [数据库优化的思路](#数据库优化的思路)
+    - [存储过程与触发器的区别](#存储过程与触发器的区别)
+    - [悲观锁和乐观锁是什么？](#悲观锁和乐观锁是什么)
+    - [你常用的mysql引擎有哪些?各引擎间有什么区别?](#你常用的mysql引擎有哪些各引擎间有什么区别)
+    - [参考](#参考)
 # Mysql
 ## ORM
 
+对象关系映射（Object Relational Mapping，简称ORM）是通过使用描述对象和数据库之间映射的元数据，将面向对象语言程序中的对象自动持久化到关系数据库中。本质上就是将数据从一种形式转换到另外一种形式
+
+当我们使用关系型数据库， 譬如mysql 会使用
+```
+SELECT * FROM users WHERE email = 'test@test.com';
+```
+ORM 就是会让你通过面向对象范型的编程语言来写出上述或者更复杂的语句
+
+**ORM优势**
+* 你可以用你更擅长的语言来编写sql， 不需要你对sql很熟悉
+* DRY 实现复用
+* DDD架构或者MVC架构代码更整洁
+* 高度抽象， 可以让你在多种数据库中mysql或者postgresSQl切换
+* ORM基本都支持各种高阶特性， 譬如事务， 连接池， 迁移， 数据流等
+* orm的执行语句会比你自己裸写的sql语句性能更好
+
+**ORM劣势**
+* 如果你是sql专家， 那可能你写sql比orm性能更好
+* 学习ORM也是有成本的
+* 一个程序员应该懂数据库或者sql的底层实现，虽然ORM简化了写sql的成本，但也可能让你
+
+比较流行的ORM
+
+* Java: Hibernate.
+* PHP: Propel or Doctrine (I prefer the last one).
+* Python: the Django ORM or SQLAlchemy (My favorite ORM library ever).
+* C#: NHibernate or Entity Framework
+
 ## ACID
 
-### 1.MySQL的四种事务隔离级别
+### MySQL的四种事务隔离级别
 一、事务的基本要素（ACID）
 
 　　1、原子性（Atomicity）：事务开始后所有操作，要么全部做完，要么全部不做，不可能停滞在中间环节。事务执行过程中出错，会回滚到事务开始前的状态，所有的操作就像没有发生一样。也就是说事务是一个不可分割的整体，就像化学中学过的原子，是物质构成的基本单位。
@@ -65,49 +98,45 @@ https://www.cnblogs.com/wyaokai/p/10921323.html
 
 　　 6、关于next-key 锁可以参考链接：https://blog.csdn.net/bigtree_3721/article/details/73731377
 
-## Transaction
-
 ## N+1
 
-### 2.主键 超键 候选键 外键
-超键（super key）：在关系中能惟一标识元素属性的集称为关系模式的超键。
+```
+class Video(models.Model):
+    url = models.URLField(unique=True)
+    .....
 
-候选键：（Candidate Key）：不含有多余属性的超键称为候选键。也就是说在候选键中在删除属性，就不是键了。
+class Comment(models.Model):
+    title = models.CharField(max_length=128)
+    video = models.ForeignKey('Video')
+        .....
+```
+在orm框架中，比如python的django可以设置关联对象，比如Video对象关联comment
 
-主键（Primary Key)：用户选作元组标识的候选键为主键。一般不佳说明，键就是主键。
+假如查询出n个video，那么需要做n次查询comment，查询video是一次select，查询video关联的
+comment，是n次，所以是n+1问题，其实叫1+n更为合理一些。
 
-外键（Froeign Key）:如果模式R中的属性k是其他模式的主键，那么k在模式R中称为外键。
+查询主数据，是1次查询，查询出n条记录；根据这n条主记录，查询从记录，共需要n次，所以叫数据库1+n问题；这样会带来性能问题，比如，查询到的n条记录，我可能只用到其中1条，但是也执行了n次从记录查询，这是不合理的。
 
-### 3.视图的作用，视图可以更改么？
-### 4.drop,delete与truncate的区别
-1、drop (删除表)：删除内容和定义，释放空间。简单来说就是把整个表去掉.以后要新增数据是不可能的,除非新增一个表。
+**解决方式：**
 
-   drop语句将删除表的结构被依赖的约束（constrain),触发器（trigger)索引（index);依赖于该表的存储过程/函数将被保留，但其状态会变为：invalid。
+把N+1次查询变成2次查询
 
-2、truncate (清空表中的数据)：删除内容、释放空间但不删除定义(保留表的数据结构)。与drop不同的是,只是清空表数据而已。
+简单说 先执行 select *,category_id from article limited 0,N
 
-   注意:truncate 不能删除行数据,要删就要把表清空。
+然后遍历结果列表,取出所有的category_id,去掉重复项
 
-3、delete (删除表中的数据)：delete 语句用于删除表中的行。delete语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存
-
-   以便进行进行回滚操作。
-
-   truncate与不带where的delete ：只删除数据，而不删除表的结构（定义）
-
-4、truncate table 删除表中的所有行，但表结构及其列、约束、索引等保持不变。新行标识所用的计数值重置为该列的种子。如果想保留标识计数值，请改用delete。
-
-   如果要删除表定义及其数据，请使用 drop table 语句。
-
-5、对于由foreign key约束引用的表，不能使用truncate table ，而应使用不带where子句的delete语句。由于truncate table 记录在日志中，所以它不能激活触发器。
-
-6、执行速度，一般来说: drop> truncate > delete。
-
-7、delete语句是数据库操作语言(dml)，这个操作会放到 rollback segement 中，事务提交之后才生效；如果有相应的 trigger，执行的时候将被触发。
-
-   truncate、drop 是数据库定义语言(ddl)，操作立即生效，原数据不放到 rollback segment 中，不能回滚，操作不触发 trigger。
+再执行一次 select name from category where id in (category id list)
 
 
-# 索引
+把子查询/join查询 分成两次,是 高并发网站数据库调优中非常有效的常见做法,虽然会花费更多的cpu时间,但是避免了系统的死锁,提高了并发响应能力
+
+譬如django中就用select_related使用SQL的JOIN语句进行优化，通过减少SQL查询的次数来进行优化、提高性能。
+
+Article.ojbects.select_related() 这就是inner join
+Article.objects.prefetch_related('category') 这是2次查询
+
+
+## 索引
 ### 索引的工作原理及其种类
 一、概述
 
@@ -176,8 +205,50 @@ B-Tree 索引适用于全键值、键值范围或键前缀查找，其中键前�
 2、索引文件占用物理空间
 
 3、当对表的数据进行insert update delete时候需要维护索引，会降低数据的维护数据。
-### 6.连接的种类
-### 7.数据库优化的思路
-### 8.存储过程与触发器的区别
-### 9.悲观锁和乐观锁是什么？
-### 10.你常用的mysql引擎有哪些?各引擎间有什么区别?
+
+### 主键 超键 候选键 外键
+超键（super key）：在关系中能惟一标识元素属性的集称为关系模式的超键。
+
+候选键：（Candidate Key）：不含有多余属性的超键称为候选键。也就是说在候选键中在删除属性，就不是键了。
+
+主键（Primary Key)：用户选作元组标识的候选键为主键。一般不佳说明，键就是主键。
+
+外键（Froeign Key）:如果模式R中的属性k是其他模式的主键，那么k在模式R中称为外键。
+
+### 视图的作用，视图可以更改么？
+### drop,delete与truncate的区别
+1、drop (删除表)：删除内容和定义，释放空间。简单来说就是把整个表去掉.以后要新增数据是不可能的,除非新增一个表。
+
+   drop语句将删除表的结构被依赖的约束（constrain),触发器（trigger)索引（index);依赖于该表的存储过程/函数将被保留，但其状态会变为：invalid。
+
+2、truncate (清空表中的数据)：删除内容、释放空间但不删除定义(保留表的数据结构)。与drop不同的是,只是清空表数据而已。
+
+   注意:truncate 不能删除行数据,要删就要把表清空。
+
+3、delete (删除表中的数据)：delete 语句用于删除表中的行。delete语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存
+
+   以便进行进行回滚操作。
+
+   truncate与不带where的delete ：只删除数据，而不删除表的结构（定义）
+
+4、truncate table 删除表中的所有行，但表结构及其列、约束、索引等保持不变。新行标识所用的计数值重置为该列的种子。如果想保留标识计数值，请改用delete。
+
+   如果要删除表定义及其数据，请使用 drop table 语句。
+
+5、对于由foreign key约束引用的表，不能使用truncate table ，而应使用不带where子句的delete语句。由于truncate table 记录在日志中，所以它不能激活触发器。
+
+6、执行速度，一般来说: drop> truncate > delete。
+
+7、delete语句是数据库操作语言(dml)，这个操作会放到 rollback segement 中，事务提交之后才生效；如果有相应的 trigger，执行的时候将被触发。
+
+   truncate、drop 是数据库定义语言(ddl)，操作立即生效，原数据不放到 rollback segment 中，不能回滚，操作不触发 trigger。
+
+## 连接的种类
+## 数据库优化的思路
+## 存储过程与触发器的区别
+## 悲观锁和乐观锁是什么？
+## 你常用的mysql引擎有哪些?各引擎间有什么区别?
+
+## 参考
+[ORM-wiki](https://en.wikipedia.org/wiki/Object-relational_mapping)
+

@@ -7,27 +7,28 @@
 ![](https://badgen.net/github/last-commit/dasydong/interview)&nbsp;
 <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/22369?icon=github&color=4ab8a1"></a>
 
-| &nbsp; Python &nbsp; |  &nbsp; 算法  &nbsp; | &nbsp;面向对象&nbsp;|&nbsp;&nbsp;&nbsp;云原生&nbsp;&nbsp;&nbsp;|         分布式| &nbsp;&nbsp;&nbsp;数据库&nbsp;&nbsp;&nbsp;  | &nbsp; 计算机 &nbsp;   | &nbsp; 大话 &nbsp; |&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;|  &nbsp; 工具包 &nbsp;
-| :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [🔨](#python) | [🔨](#算法) | [🔨](#面向对象) | [🔨](#云原生) |[🔨](#分布式)| [🔨](#数据库) | [🔨](#计算机)| [🔨](#大话) | [🔨](#推荐)| [🔨](#工具包)|
 
-<!-- ![](./pics/backend-map-c.png) -->
+|  &nbsp; 互联网 &nbsp; |  &nbsp; 前端知识 &nbsp;|  &nbsp; 操作系统 &nbsp;|  &nbsp; 编程语言 &nbsp;|  &nbsp; 数据库   &nbsp;|&nbsp;面向对象&nbsp;| &nbsp; 算法 &nbsp;
+|:----: | :----: | :---: | :----: | :---: | :----: | :----: |
+| [🔨](#互联网) | [🔨](#前端知识) | [🔨](#操作系统) | [🔨](#编程语言) | [🔨](#数据库) | [🔨](#面向对象)| [🔨](#算法)
+
+|&nbsp;&nbsp;云原生&nbsp;&nbsp;| &nbsp;分布式&nbsp;| &nbsp; API &nbsp; |  &nbsp; 测试 &nbsp;|&nbsp;&nbsp;&nbsp;推荐&nbsp;&nbsp;&nbsp;|  &nbsp; 工具包 &nbsp;|  &nbsp; 大话 &nbsp;
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| [🔨](#云原生)| [🔨](#分布式)| [🔨](#API)| [🔨](#测试)|[🔨](#推荐)| [🔨](#工具包)| [🔨](#大话)|
+
+![](./pics/backend-map-c.png)
 # 互联网
 * [互联网是如何工作的](./notes/How-Does-the-Internet-Work.md)
 * [HTTP](./notes/http.md)
-* [DNS](./notes/dns.md)
+* [DNS](./notes/http.md)
 * [Domain](./notes/domain.md)
-* [托管](./notes/tuoguan.md)
-* [CDN缓存](./notes/tuoguan.md)
-* [客户端缓存](./notes/tuoguan.md)
-* [Websocket](./notes/tuoguan.md)
-* [Nginx](./notes/tuoguan.md)
+* [CDN](./notes/tuoguan.md)
 
 # 前端知识
+* [浏览器和他们是如何工作的](./notes/frontend.md)
 * [CSS](./notes/frontend.md)
 * [HTML](./notes/frontend.md)
 * [Javascript](./notes/frontend.md)
-* [浏览器和他们是如何工作的](./notes/frontend.md)
 
 # 操作系统
 * [操作系统](./notes/system.md)
@@ -38,29 +39,14 @@
 * [Go](./notes/go.md)
 * [Java](./notes/java.md)
 
-# 版本控制系统
-* [Git](./notes/git.md)
-* [GitHub](./notes/github.md)
-
 # 数据库
-
 * [MySQL](./notes/mysql.md)
     * [ORM](./notes/mysql.md)
     * [ACID](./notes/mysql.md)
-    * [Transaction](./notes/mysql.md)
     * [N+1](./notes/mysql.md)
     * [Index索引](./notes/mysql.md)
 * [MongoDB](./notes/mongodb.md)
 * [Redis](./notes/redis.md)
-
-# API
-
-* [Rest](./notes/rest.md)
-* [JsonApi](./notes/jsonapi.md)
-* [Swagger](./notes/swagger.md)
-* [身份验证](./notes/authentication.md)
-
-# 测试
 
 # 算法
 
@@ -96,8 +82,13 @@
 * [CAP](./notes/cap.md)
 * [raft算法](./notes/raft.md)
 
-# 搜索
-* [ELK.md](./notes/elk.md)
+# API
+* [Rest](./notes/rest.md)
+* [JsonApi](./notes/jsonapi.md)
+* [Swagger](./notes/swagger.md)
+* [身份验证](./notes/authentication.md)
+
+# 测试
 
 # 大话
 * [程序员如何成长](./notes/be_programmer.md)
@@ -106,6 +97,8 @@
 * [中台](./notes/zhongtai.md)
 
 # 工具包
+* [Git](./notes/git.md)
+* [ELK](./notes/elk.md)
 * [norepeat](https://github.com/DasyDong/python-norepeat)
 * [SpellCheck](https://github.com/DasyDong/spell-check-go)
 
