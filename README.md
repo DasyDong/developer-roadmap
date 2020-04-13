@@ -105,7 +105,6 @@
 # 推荐
 
 * [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
-* [devops-roadmap](https://github.com/raycad/devops-roadmap)
 * [stackoverflow上Python相关回答整理翻译](https://github.com/wklken/stackoverflow-py-top-qa)
 * [Istio服务网格进阶实战](https://github.com/servicemesher/istio-handbook)
 * [MasteringGO 中文译本](https://github.com/hantmac/Mastering_Go_ZH_CN)
