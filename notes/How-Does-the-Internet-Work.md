@@ -195,6 +195,7 @@ TCP像这样工作：
 * 当TCP层收到一个从IP层传上来的数据包是，TCP剥掉TCP头，并且如果需要做一些数据的重构，然后发送数据到正确的应用使用TCP头中的端口号。
 
 TCP不是文本协议。TCP是一个面向连接的，可靠的字节流服务。面向连接意味着两个使用TCP协议的应用必须先建立一个连接在交换数据之前。TCP是可靠的因为每一个数据包收到的时候，一个获得信息将会发送给发送方来确认这次发送。TCP也有一个CheckSum来检查传输的数据是否正确。TCP头数据结构如下：
+
 ![](../pics/how-internet-work/ruswp_diag7.png)
 
 注意到这里没有任何IP地址信息，因为TCP并不知道任何关于IP地址的信息。TCP是为了可靠的从应用层获取数据传到另外一个应用。
@@ -221,7 +222,7 @@ Well Known Internet Port Numbers
 
 ## 结束语
 现在你知道了互联网是怎么工作的。但是这种形式会保持多久了？目前IPV4只允许2的32次方个地址。目前已经有IPV6了，----话说从我知道有开始到现在感觉还没普及，谁知道会怎么发生。
-[此篇文章出自2002年，当前确实ip4已结耗尽， ip6开始使用]
+(此篇文章出自2002年，当前确实ip4已结耗尽， ip6开始使用)
 
 
 ## 资源
@@ -240,21 +241,8 @@ http://navigators.com/isp.html is Russ Haynal's ISP Page. This is a great site w
 
 ## 参考文献
 TCP和网络的相关书籍：
-TCP/IP Illustrated, Volume 1, The Protocols.
-W. Richard Stevens.
-Addison-Wesley, Reading, Massachusetts. 1994.
-Encyclopedia of Networking.
-Tom Sheldon.
-Osbourne McGraw-Hill, New York. 1998
-
-
-其他比较好的书：
-Firewalls and Internet Security; Repelling the Wiley Hacker.
-William R. Cheswick, Steven M. Bellovin.
-Addison-Wesley, Reading, Massachusetts. 1994.
-Data Communications, Computer Networks and Open Systems. Fourth Edition.
-Fred Halsall.
-Addison-Wesley, Harlow, England. 1996.
-Telecommunications: Protocols and Design.
-John D. Spragins with Joseph L. Hammond and Krzysztof Pawlikowski.
-Addison-Wesley, Reading, Massachusetts. 1992.
+TCP/IP Illustrated, Volume 1, The Protocols. W. Richard Stevens.<br/>
+Addison-Wesley, Reading, Massachusetts. 1994.<br/>
+Encyclopedia of Networking.<br/>
+Tom Sheldon.<br/>
+Osbourne McGraw-Hill, New York. 1998 <br/>
