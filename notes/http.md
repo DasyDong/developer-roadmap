@@ -231,6 +231,7 @@ Cache存储的另一个重要因素是存储的可靠性，目前，多数存储
     当 DNS 系统在查询 CNAME 左面的名称的时候，都会转向 CNAME 右面的名称再进行查询，一直追踪到最后的 PTR 或 A 名称，成功查询后才会做出回应，否则失败。
 
 ## 参考
+[HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 
 [CDN是什么？使用CDN有什么优势](https://www.zhihu.com/question/36514327?rf=37353035)
 

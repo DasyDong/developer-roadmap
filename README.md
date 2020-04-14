@@ -84,10 +84,10 @@
 * [raft算法](./notes/raft.md)
 
 # API
-* [Rest](./notes/rest.md)
-* [JsonApi](./notes/jsonapi.md)
-* [Swagger](./notes/swagger.md)
-* [身份验证](./notes/authentication.md)
+* [Rest](./notes/api.md)
+* [JsonApi](./notes/api.md)
+* [Swagger](./notes/api.md)
+* [身份验证](./notes/api.md)
 
 # 测试
 
