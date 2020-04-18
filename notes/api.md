@@ -1,6 +1,28 @@
 - [Rest](#rest)
     - [概念](#概念)
     - [设计原则](#设计原则)
+- [身份验证](#身份验证)
+    - [初探OAuth,Token和JWT](#初探oauthtoken和jwt)
+        - [什么是OAuth?](#什么是oauth)
+        - [什么是Token?](#什么是token)
+        - [什么又是JWT？](#什么又是jwt)
+        - [三者之间又是什么关系?](#三者之间又是什么关系)
+    - [OAuth](#oauth)
+        - [概念](#概念)
+        - [设计思路](#设计思路)
+        - [原理](#原理)
+        - [名词](#名词)
+        - [应用场景](#应用场景)
+    - [Token](#token)
+        - [概念](#概念)
+        - [原理](#原理)
+            - [Access Token 类型](#access-token-类型)
+            - [认证请求方式](#认证请求方式)
+    - [JWT](#jwt)
+        - [概念](#概念)
+        - [原理](#原理)
+        - [应用场景](#应用场景)
+            - [无状态的分布式API](#无状态的分布式api)
     - [参考](#参考)
 # Rest
 
@@ -106,6 +128,314 @@ REST章节 ： [Representational State Transfer (REST)](https://www.ics.uci.edu/
 
 * 分清 401 和 403
 
+# 身份验证
+
+## 初探OAuth,Token和JWT
+
+### 什么是OAuth?
+
+OAuth是一个开放标准,提供了一种简单和标准的安全授权方法,允许用户无需将某个网站的用户名密码提供给第三方应用就可以让该第三方应用访问该用户在某网站上的某些特定信息(如简单的个人信息),现在一般用的是OAuth 2.0(不兼容1.0).
+
+### 什么是Token?
+
+Token就是获取信息的凭证,就是Access Token,让客户端无需用户密码即可获取用户授权的某些资源.
+
+### 什么又是JWT？
+
+JSON Web Tokens, 这是一个开放的标准,规定了一种Token实现方式,以JSON为格式.
+
+### 三者之间又是什么关系?
+
+这三个相互连接且是由大到小的一种关系,OAuth规定授权流程,Token为其中一环的一个信息载体,具体的一种实现方式由JWT规定
+
+
+## OAuth
+
+### 概念
+
+OAuth 2.0:
+是一个开放标准,提供了一种简单和标准的安全授权方法,允许用户无需将某个网站的用户名密码提供给第三方应用就可以让该第三方应用访问该用户在某网站上的某些特定信息(如简单的个人信息)。
+
+>The OAuth 2.0 authorization framework enables a third-party application to obtain limited access
+ to an HTTP service, either on behalf of a resource owner by orchestrating an approval interaction
+ between the resource owner and the HTTP service, or by allowing the third-party application to
+ obtain access on its own behalf.
+  [RFC6749](https://tools.ietf.org/html/rfc6749) [rfc6749](http://www.rfcreader.com/#rfc6749)
+
+### 设计思路
+
+OAuth在"客户端"与"服务提供商"之间，设置了一个授权层（authorization layer）。"客户端"不能直接登录"服务提供商"，只能登录授权层，以此将用户与客户端区分开来。"客户端"登录授权层所用的令牌（token），与用户的密码不同。用户可以在登录的时候，指定授权层令牌的权限范围和有效期。
+
+"客户端"登录授权层以后，"服务提供商"根据令牌的权限范围和有效期，向"客户端"开放用户储存的资料。
+
+### 原理
+
+```
+  +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+```
+```
+（A）用户打开客户端以后，客户端要求用户给予授权。
+
+（B）用户同意给予客户端授权。
+
+（C）客户端使用上一步获得的授权，向认证服务器申请令牌。
+
+（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。
+
+（E）客户端使用令牌，向资源服务器申请获取资源。
+
+（F）资源服务器确认令牌无误，同意向客户端开放资源。
+```
+更详细的可以看这篇文章 [理解OAuth 2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)
+
+### 名词
+
+**Roles角色**
+
+应用程序或者用户都可以是下边的任何一种角色：
+
+* 资源拥有者
+* 资源服务器
+* 客户端应用
+* 认证服务器
+
+
+**Client Types客户端类型**
+
+这里的客户端主要指API的使用者。它可以是的类型：
+
+* 私有的
+* 公开的
+
+**Client Profile客户端描述**
+
+OAuth2框架也指定了集中客户端描述，用来表示应用程序的类型：
+
+* Web应用
+* 用户代理
+* 原声应用
+
+**Authorization Grants认证授权**
+
+认证授权代表资源拥有者授权给客户端应用程序的一组权限，可以是下边几种形式：
+
+* 授权码
+* 隐式授权
+* 资源拥有者密码证书
+* 客户端证书
+* Endpoints终端
+
+**OAuth2框架需要下边几种终端：**
+
+* 认证终端
+* Token终端
+* 重定向终端
+
+### 应用场景
+
+* 外部认证服务器
+
+    通过第三方认证服务， 来完成服务授权控制
+
+    优势
+
+    * 快速开发
+    * 实施代码量小
+    * 维护工作减少
+
+* 大型企业解决方案
+
+    API调用方很多， 并且每个app使用方式不一样， 应该抽象出独立灵活的安全策略
+
+    优势
+
+    * 灵活的实现方式
+    * 可以和JWT同时使用
+    * 可针对不同应用扩展
+
+## Token
+
+### 概念
+Token就是获取信息的凭证, 关于Token的具体使用有相应的RFC文件指导: [The OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6750)
+
+### 原理
+
+#### Access Token 类型
+
+Token的类型可分为两种:
+
+1 **bearer**. 包含一个简单的Token字符串.
+
+2 **mac**. 由消息授权码(Message Authentication Code)和Token组成.
+
+示例:
+```
+// bearer
+GET /resource/1 HTTP/1.1
+Host: example.com
+Authorization: Bearer mF_9.B5f-4.1JqM
+
+// mac
+GET /resource/1 HTTP/1.1
+Host: example.com
+Authorization: MAC id="h480djs93hd8",
+                   nonce="274312:dj83hs9s",
+               mac="kDZvddkndxvhGRXZhvuDjEhGeE="
+```
+
+#### 认证请求方式
+使用Token的认证请求的方式有三种,客户端可以选择一种来实现,但是不能同时使用多种:
+
+* 放在请求头
+* 放在请求体
+* 放在URI
+详细如下:
+
+**1 放在请求头**
+
+放在Header的Authorization中,并使用Bearer开头:
+```
+GET /resource HTTP/1.1
+Host: server.example.com
+Authorization: Bearer mF_9.AAW3_AH
+```
+
+**2 放在请求体**
+
+放在body中的access_token参数中,并且满足以下条件:
+
+* HTTP请求头的Content-Type设置成application/x-www-form-urlencoded.
+* Body参数是single-part.
+* HTTP请求方法应该是推荐可以携带Body参数的方法,比如POST,不推荐GET.
+
+示例:
+```
+POST /resource HTTP/1.1
+Host: server.example.com
+Content-Type: application/x-www-form-urlencoded
+
+access_token=mF_9.B5f-4.1JqM
+```
+
+**3 放在URI**
+
+放在uri中的access_token参数中
+
+```
+GET /resource?access_token=mF_9.B5f-4.1JqM
+Host: server.example.com
+
+```
+
+## JWT
+
+### 概念
+[JWT](https://jwt.io/)是一种安全标准。基本思路就是用户提供用户名和密码给认证服务器，服务器验证用户提交信息信息的合法性；如果验证成功，会产生并返回一个Token（令牌），用户可以使用这个token访问服务器上受保护的资源。
+
+>JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties. The claims in a JWT are encoded as a JSON object that is digitally signed using JSON Web Signature (JWS).
+-[RFC7519](https://tools.ietf.org/html/rfc7519)
+
+
+### 原理
+JWT的结构分为三个部分header.payload.signature:
+
+* Header: 存放Token类型和加密的方法
+* Payload: 包含一些用户身份信息.
+* Signature: 签名是将前面的Header,Payload信息以及一个密钥组合起来并使用Header中的算法进行加密
+
+最终生成的是一个有两个.号连接的字符串,前两个部分是Header和Payload的Base64编码,最后一个是签名,如下:
+
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+```
+
+**HEADER:ALGORITHM & TOKEN TYPE**
+
+    头部分简单声明了类型(JWT)以及产生签名所使用的算法
+
+```
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+**PAYLOAD:DATA**
+
+    声明部分是整个token的核心，表示要发送的用户详细信息。
+
+```
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+}
+```
+
+**VERIFY SIGNATURE**
+
+    签名的目的是为了保证上边两部分信息不被篡改。如果尝试使用Bas64对解码后的token进行修改，签名信息就会失效。一般使用一个私钥（private key）通过特定算法对Header和Claims进行混淆产生签名信息，所以只有原始的token才能于签名信息匹配。
+            这里有一个重要的实现细节。只有获取了私钥的应用程序（比如服务器端应用）才能完全认证token包含声明信息的合法性。所以，永远不要把私钥信息放在客户端（比如浏览器）。
+
+```
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+
+your-256-bit-secret
+
+) secret base64 encoded
+```
+
+### 应用场景
+
+#### 无状态的分布式API
+ 
+JWT的主要优势在于使用无状态、可扩展的方式处理应用中的用户会话。服务端可以通过内嵌的声明信息，很容易地获取用户的会话信息，而不需要去访问用户或会话的数据库。在一个分布式的面向服务的框架中，这一点非常有用。
+但是，如果系统中需要使用黑名单实现长期有效的token刷新机制，这种无状态的优势就不明显了。
+
+**优势**
+
+* 快速开发
+* 不需要cookie
+* JSON在移动端的广泛应用
+* 不依赖于社交登录
+* 相对简单的概念理解
+
+**限制**
+
+* Token有长度限制
+* Token不能撤销
+* 需要token有失效时间限制(exp)
+* OAuth2使用场景
 
 ## 参考
 [Status Code Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+
+[JWT官方网站](http://jwt.io)
+
+[OAuth2官方网站](http://oauth.net/2/)
+
+[理解OAuth 2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)
+
+[OAuth2和JWT - 如何设计安全的API](https://www.jianshu.com/p/1f2d6e5126cb)
+
+[OAuth,Token和JWT](https://www.jianshu.com/p/9f80be6ba2e9)
+
+[OAuth 2.0 Tutorial](http://tutorials.jenkov.com/oauth2/overview.html)
