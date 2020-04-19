@@ -139,7 +139,12 @@
 * 在 Issue 中交流想法
 * 传播这个Repo 欢迎Star
 
+# Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/DasyDong/interview.svg)](https://starchart.cc/DasyDong/interview)
+
+
 # 最后
 
-给我一个 ⭐Star吧！&& 感谢每一个赞赏！
+给我一个 ⭐ 吧！&& 请我喝一杯☕️！
 ![](./pics/WechatIMG95.jpeg)
