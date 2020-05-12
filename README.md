@@ -36,7 +36,7 @@
 
 # 编程语言
 * [Python](./notes/python.md)
-* [Go-未添加](./notes/go.md)
+* [Go](./notes/go.md)
 * [Java-未添加](./notes/java.md)
 
 # 数据库
