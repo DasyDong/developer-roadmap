@@ -1,9 +1,13 @@
+- [源码解析Github](#源码解析github)
 - [Slice 解析](#slice-解析)
 - [Map 解析](#map-解析)
 - [Atomic原子操作](#atomic原子操作)
 - [sync.Map详解](#syncmap详解)
 - [Sync.Once](#synconce)
-- [源码解析Github](#源码解析github)
+
+# 源码解析Github
+
+[源码解析Github](https://rainbowmango.gitbook.io/go/)
 
 # Slice 解析
 
@@ -626,6 +630,4 @@ func (m *Map) missLocked() {
 [Once详解](https://mp.weixin.qq.com/s/Lsm-BMdKCKNQjRndNCLwLw)
 [Once](https://pioneerlfn.github.io/2019/12/12/go-sync-Once/)
 
-# 源码解析Github
 
-[源码解析Github](https://rainbowmango.gitbook.io/go/)
