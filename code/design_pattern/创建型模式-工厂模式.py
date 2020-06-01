@@ -8,7 +8,7 @@
 """
 工厂模式：实例化延迟到子类
 缺点是使用类作为代价，且factory修改不封闭，每增加product就要修改
-但可以使用配置文件，既可以封闭了
+但可以使用配置文件，就可以封闭了
 """
 class Product_opt:
     def getResult(self):
