@@ -31,7 +31,7 @@ class Factory:
         if ch in self.operation:
             op = self.operation[ch]
         else:
-            op = product_err()
+            op = Product_err()
         return op
 if __name__=="__main__":
     num1=input("a:")
