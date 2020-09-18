@@ -7,7 +7,7 @@
 
 # 源码解析Github
 
-[源码解析Github](https://rainbowmango.gitbook.io/go/)
+[源码解析Github](https://github.com/DasyDong/GoExpertProgramming)  
 
 # Slice 解析
 
