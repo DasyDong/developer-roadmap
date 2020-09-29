@@ -2,7 +2,6 @@
 &nbsp; ![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&style=flat-square&color=blueviolet)&nbsp;
 &nbsp; ![](https://img.shields.io/github/license/dasydong/interview)&nbsp;
 &nbsp; ![](https://badgen.net/github/stars/dasydong/interview)&nbsp;
-&nbsp; ![](https://badgen.net/github/forks/dasydong/interview)&nbsp;
 &nbsp; ![](https://img.shields.io/github/repo-size/dasydong/interview?color=orange)&nbsp;
 &nbsp; ![](https://badgen.net/github/last-commit/dasydong/interview)&nbsp;
 &nbsp; <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/22369?icon=github&color=red"></a>
