@@ -1,8 +1,6 @@
 # README
 
-## Interview
-
-  ![contributions welcome](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&style=flat-square&color=blueviolet)    ![](https://img.shields.io/github/license/dasydong/interview)    ![](https://badgen.net/github/stars/dasydong/interview)    ![](https://img.shields.io/github/repo-size/dasydong/interview?color=orange)    ![](https://badgen.net/github/last-commit/dasydong/interview)    
+Interview
 
 ![](https://dasydong.github.io/img/backend-map-c.png)
 
