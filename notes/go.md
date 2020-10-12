@@ -1,4 +1,5 @@
+# go
 
-* [Go面试题](./go_interview.md)
+* [Go面试题](go_interview.md)
+* [Go源码原理解析](go_analyse.md)
 
-* [Go源码原理解析](./go_analyse.md)

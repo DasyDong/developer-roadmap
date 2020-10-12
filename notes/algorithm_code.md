@@ -1,27 +1,34 @@
-- [算法](#算法)
-    - [题目](#题目)
-        - [1.红黑树](#1红黑树)
-        - [2.基本排序算法汇总(桶排序,归并,快排,希尔,插入,选择,冒泡)](#2基本排序算法汇总桶排序归并快排希尔插入选择冒泡)
-        - [3.数组中出现次数超过一半的数字-Python版](#3数组中出现次数超过一半的数字-python版)
-        - [4.求100以内的质数](#4求100以内的质数)
-        - [5.无重复字符的最长子串-Python实现](#5无重复字符的最长子串-python实现)
-        - [6.通过2个5/6升得水壶从池塘得到3升水](#6通过2个5/6升得水壶从池塘得到3升水)
-        - [7.什么是MD5加密，有什么特点？](#7什么是md5加密有什么特点)
-        - [8.什么是对称加密和非对称加密](#8什么是对称加密和非对称加密)
-        - [9.如何判断单向链表中是否有环？](#9如何判断单向链表中是否有环)
-        - [10.斐波那契数列](#10斐波那契数列)
-        - [11.如何翻转一个单链表？](#11如何翻转一个单链表)
-        - [12.两数之和 Two Sum](#12两数之和-two-sum)
-        - [13.搜索旋转排序数组 Search in Rotated Sorted Array](#13搜索旋转排序数组-search-in-rotated-sorted-array)
-        - [14.Python实现一个Stack的数据结构](#14python实现一个stack的数据结构)
-        - [15.写一个二分查找](#15写一个二分查找)
-        - [16.set 用 in 时间复杂度是多少，为什么？](#16set-用-in-时间复杂度是多少为什么)
-        - [17.列表中有n个正整数范围在[0，1000]，进行排序；](#17列表中有n个正整数范围在[01000]进行排序；)
-# 算法
-## 题目
-算法题直接刷leetcode即可
-### 1.红黑树
-红黑树与AVL的比较：
+# algorithm\_code
+
+* [算法](algorithm_code.md#算法)
+  * [题目](algorithm_code.md#题目)
+    * [1.红黑树](algorithm_code.md#1红黑树)
+    * [2.基本排序算法汇总\(桶排序,归并,快排,希尔,插入,选择,冒泡\)](algorithm_code.md#2基本排序算法汇总桶排序归并快排希尔插入选择冒泡)
+    * [3.数组中出现次数超过一半的数字-Python版](algorithm_code.md#3数组中出现次数超过一半的数字-python版)
+    * [4.求100以内的质数](algorithm_code.md#4求100以内的质数)
+    * [5.无重复字符的最长子串-Python实现](algorithm_code.md#5无重复字符的最长子串-python实现)
+    * [6.通过2个5/6升得水壶从池塘得到3升水](algorithm_code.md#6通过2个5/6升得水壶从池塘得到3升水)
+    * [7.什么是MD5加密，有什么特点？](algorithm_code.md#7什么是md5加密有什么特点)
+    * [8.什么是对称加密和非对称加密](algorithm_code.md#8什么是对称加密和非对称加密)
+    * [9.如何判断单向链表中是否有环？](algorithm_code.md#9如何判断单向链表中是否有环)
+    * [10.斐波那契数列](algorithm_code.md#10斐波那契数列)
+    * [11.如何翻转一个单链表？](algorithm_code.md#11如何翻转一个单链表)
+    * [12.两数之和 Two Sum](algorithm_code.md#12两数之和-two-sum)
+    * [13.搜索旋转排序数组 Search in Rotated Sorted Array](algorithm_code.md#13搜索旋转排序数组-search-in-rotated-sorted-array)
+    * [14.Python实现一个Stack的数据结构](algorithm_code.md#14python实现一个stack的数据结构)
+    * [15.写一个二分查找](algorithm_code.md#15写一个二分查找)
+    * [16.set 用 in 时间复杂度是多少，为什么？](algorithm_code.md#16set-用-in-时间复杂度是多少为什么)
+    * [17.列表中有n个正整数范围在\[0，1000\]，进行排序；](algorithm_code.md#17列表中有n个正整数范围在[01000]进行排序；)
+
+      **算法**
+
+      **题目**
+
+      算法题直接刷leetcode即可
+
+      **1.红黑树**
+
+      红黑树与AVL的比较：
 
 AVL是严格平衡树，因此在增加或者删除节点的时候，根据不同情况，旋转的次数比红黑树要多；
 
@@ -29,18 +36,18 @@ AVL是严格平衡树，因此在增加或者删除节点的时候，根据不�
 
 所以简单说，如果你的应用中，搜索的次数远远大于插入和删除，那么选择AVL，如果搜索，插入删除次数几乎差不多，应该选择RB。
 
-红黑树详解: https://xieguanglei.github.io/blog/post/red-black-tree.html
+红黑树详解: [https://xieguanglei.github.io/blog/post/red-black-tree.html](https://xieguanglei.github.io/blog/post/red-black-tree.html)
 
-教你透彻了解红黑树: https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md
+教你透彻了解红黑树: [https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md](https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md)
 
-### 2.基本排序算法汇总(桶排序,归并,快排,希尔,插入,选择,冒泡)
+#### 2.基本排序算法汇总\(桶排序,归并,快排,希尔,插入,选择,冒泡\)
 
-![](../pics/python/all_sort.png)
+![](../.gitbook/assets/all_sort.png)
 
-https://blog.csdn.net/mrlevo520/article/details/77829204
-https://blog.csdn.net/stdio1916/article/details/90485867
+[https://blog.csdn.net/mrlevo520/article/details/77829204](https://blog.csdn.net/mrlevo520/article/details/77829204) [https://blog.csdn.net/stdio1916/article/details/90485867](https://blog.csdn.net/stdio1916/article/details/90485867)
 
 归并排序
+
 ```python
 def merge_sort(arr1):
     if len(arr1) < 2:
@@ -73,6 +80,7 @@ def quick_sort(arr1):
 ```
 
 插入
+
 ```python
 def insert_sort(relist):
     len_ = len(relist)
@@ -85,9 +93,9 @@ def insert_sort(relist):
     return relist
 ```
 
-
 冒泡
-```
+
+```text
 def bubble_sort(arr1):
     for i in range(len(arr1)):
         for j  in range(len(arr1[1:])):
@@ -96,8 +104,9 @@ def bubble_sort(arr1):
     return arr1
 ```
 
-### 3.数组中出现次数超过一半的数字-Python版
-```
+#### 3.数组中出现次数超过一半的数字-Python版
+
+```text
 # -*- coding:utf-8 -*-
 class Solution:
     def more_than_half(self, numbers):
@@ -112,9 +121,12 @@ class Solution:
                 return num
         return 0
 ```
-### 4.求100以内的质数
-### 5.无重复字符的最长子串-Python实现
-```
+
+#### 4.求100以内的质数
+
+#### 5.无重复字符的最长子串-Python实现
+
+```text
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         res = 0;i = 0; val = ""
@@ -124,13 +136,17 @@ class Solution(object):
             else:
                 i += s[i:j].index(s[j]) + 1
         return res
+```
 
-```
-### 6.通过2个5/6升得水壶从池塘得到3升水
-### 7.什么是MD5加密，有什么特点？
-### 8.什么是对称加密和非对称加密
-### 9.如何判断单向链表中是否有环？
-```
+#### 6.通过2个5/6升得水壶从池塘得到3升水
+
+#### 7.什么是MD5加密，有什么特点？
+
+#### 8.什么是对称加密和非对称加密
+
+#### 9.如何判断单向链表中是否有环？
+
+```text
 # 快慢指针
 class Solution(object):
     def hasCycle(self, head):
@@ -146,8 +162,10 @@ class Solution(object):
 
         return True
 ```
-### 10.斐波那契数列
-```
+
+#### 10.斐波那契数列
+
+```text
 def fib();
 a, b = 0, 1
 while true:
@@ -157,31 +175,35 @@ while true:
 from itertools import islice
 print list(islice(fib(), 5))
 ```
-### 11.如何翻转一个单链表？
-```
+
+#### 11.如何翻转一个单链表？
+
+```text
 class Solution(object):
-	def reverseList(self, head):
-		"""
-		:type head: ListNode
-		:rtype: ListNode
-		"""
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
 # 申请两个节点，pre和 cur，pre指向None
-		pre = None
-		cur = head
+        pre = None
+        cur = head
 # 遍历链表，while循环里面的内容其实可以写成一行
 # 这里只做演示，就不搞那么骚气的写法了
-		while cur:
+        while cur:
 # 记录当前节点的下一个节点
-			tmp = cur.next
+            tmp = cur.next
 # 然后将当前节点指向pre
-			cur.next = pre
+            cur.next = pre
 # pre和cur节点都前进一位
-			pre = cur
-			cur = tmp
-		return pre
+            pre = cur
+            cur = tmp
+        return pre
 ```
-### 12.两数之和 Two Sum
-```
+
+#### 12.两数之和 Two Sum
+
+```text
 class Solution(object):
     def twoSum(self, nums, target):
         _dict = {}
@@ -190,10 +212,14 @@ class Solution(object):
                 return [_dict.get(target - m), i]
             _dict[m] = i
 ```
-### 13.搜索旋转排序数组 Search in Rotated Sorted Array
-### 14.Python实现一个Stack的数据结构
-### 15.写一个二分查找
-```
+
+#### 13.搜索旋转排序数组 Search in Rotated Sorted Array
+
+#### 14.Python实现一个Stack的数据结构
+
+#### 15.写一个二分查找
+
+```text
 def binary_chop(alist, data):
     """
     非递归解决二分查找
@@ -233,5 +259,8 @@ if __name__ == "__main__":
     else:
         print('false')
 ```
-### 16.set 用 in 时间复杂度是多少，为什么？
-### 17.列表中有n个正整数范围在[0，1000]，进行排序；
+
+#### 16.set 用 in 时间复杂度是多少，为什么？
+
+#### 17.列表中有n个正整数范围在\[0，1000\]，进行排序；
+

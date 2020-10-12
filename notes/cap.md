@@ -1,4 +1,5 @@
 # CAP 定理
+
 CAP原则又称CAP定理，指的是在一个分布式系统中， Consistency（一致性）、 Availability（可用性）、Partition tolerance（分区容错性），三者不可得兼。
 
 对于一个分布式系统，不能同时满足一下三点：
@@ -11,14 +12,30 @@ CAP原则又称CAP定理，指的是在一个分布式系统中， Consistency�
 
 CAP原则的精髓就是要么AP，要么CP，要么AC，但是不存在CAP。如果在某个分布式系统中数据无副本， 那么系统必然满足强一致性条件， 因为只有独一数据，不会出现数据不一致的情况，此时C和P两要素具备，但是如果系统发生了网络分区状况或者宕机，必然导致某些数据不可以访问，此时可用性条件就不能被满足，即在此情况下获得了CP系统，但是CAP不可同时满足
 
-![](../pics/cap.png)
+![](../.gitbook/assets/cap.png)
 
-* 弱一致性 <br>
-    最终一致性<br>
-    DNS(Domain Name System)<br>
-    Gossip(Cassandra的通信协议)<br>
-* 强一致性<br>
-    同步<br>
-    Paxos<br>
-    Raft(multi-paxos)<br>
-    ZAB(multi-poxos)<br>
+* 弱一致性   
+
+
+    最终一致性  
+
+
+    DNS\(Domain Name System\)  
+
+
+    Gossip\(Cassandra的通信协议\)  
+
+* 强一致性  
+
+
+    同步  
+
+
+    Paxos  
+
+
+    Raft\(multi-paxos\)  
+
+
+    ZAB\(multi-poxos\)  
+

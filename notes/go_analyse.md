@@ -1,39 +1,42 @@
-- [源码解析Github](#源码解析github)
-- [Slice 解析](#slice-解析)
-- [Map 解析](#map-解析)
-- [Atomic原子操作](#atomic原子操作)
-- [sync.Map详解](#syncmap详解)
-- [Sync.Once](#synconce)
+# go\_analyse
 
-# 源码解析Github
+* [源码解析Github](go_analyse.md#源码解析github)
+* [Slice 解析](go_analyse.md#slice-解析)
+* [Map 解析](go_analyse.md#map-解析)
+* [Atomic原子操作](go_analyse.md#atomic原子操作)
+* [sync.Map详解](go_analyse.md#syncmap详解)
+* [Sync.Once](go_analyse.md#synconce)
 
-[源码解析Github](https://github.com/DasyDong/GoExpertProgramming)  
+## 源码解析Github
 
-# Slice 解析
+[源码解析Github](https://github.com/DasyDong/GoExpertProgramming)
+
+## Slice 解析
 
 源码 go\src\runtime\slice.go
 
-
-```
+```text
 type slice struct {
    array unsafe.Pointer
    len   int
    cap   int
 }
 ```
-```
+
+```text
 func makeslice(et *_type, len, cap int) slice {
    p := mallocgc(et.size*uintptr(cap), et, true)
    return slice{p, len, cap}
 }
 ```
 
-根据容量cap*元素size，申请一块内存。mallocgc大空间（大于32kb）才会在heap堆上申请，否则在栈上分配，具体以后再介绍。
+根据容量cap\*元素size，申请一块内存。mallocgc大空间（大于32kb）才会在heap堆上申请，否则在栈上分配，具体以后再介绍。
 
 这里我们就看到切片底层就是数组，特别的是切片可以增长。
 
 **关于增长grow**
-```
+
+```text
 // it returns a new slice with at least that capacity, with the old data
 // copied into it.
 // The new slice's length is set to the old slice's length,
@@ -42,7 +45,7 @@ func makeslice(et *_type, len, cap int) slice {
 // to calculate where to write new values during an append.
 ```
 
-```
+```text
 方法返回的新切片容量至少达到请求，也就是说新的容量可能比申请的多；
 copy老数据，也就是说有性能损耗；
 len一致，因为数据内容不变.
@@ -50,7 +53,7 @@ len一致，因为数据内容不变.
 
 **关于CAP**
 
-```
+```text
  newcap := old.cap
    doublecap := newcap + newcap
    if cap > doublecap {
@@ -72,13 +75,13 @@ cap增长策略：
 * 如果当前大小小于1024，则两倍增长；
 * 否则每次增长25%，直到满足期望。
 
-# Map 解析
+## Map 解析
 
 源码 go\src\runtime\hashmap.go
 
 **简介**
 
-```
+```text
 // A map is just a hash table. The data is arranged
 // into an array of buckets. Each bucket contains up to
 // 8 key/value pairs. The low-order bits of the hash are
@@ -114,7 +117,7 @@ map就是一个hash表。数据被分配到bucket桶数组中。每个桶有8个
 
 **struct**
 
-```
+```text
 type hmap struct {
    count     int // # live cells == size of map.  Must be first (used by len() builtin)
    flags     uint8
@@ -134,9 +137,9 @@ type hmap struct {
 * buckets，桶数组，长度2^B
 * oldbuckets，老桶数组，扩容时不为nil
 * nevacuate，num evacuate，撤离进度，小于它的都已经撤离到新桶数组
-* overflow *[2]*[]*bmap，这个挺有意思的，长度为2的数组，元素是桶数组。overflow 保存溢出的桶，即桶超过8个kv。overflow[0]对应buckets溢出，overflow[1]对应oldbuckets溢出。
+* overflow _\[2\]_\[\]\*bmap，这个挺有意思的，长度为2的数组，元素是桶数组。overflow 保存溢出的桶，即桶超过8个kv。overflow\[0\]对应buckets溢出，overflow\[1\]对应oldbuckets溢出。
 
-```
+```text
 // A bucket for a Go map.
 type bmap struct {
    // tophash generally contains the top byte of the hash value
@@ -150,7 +153,7 @@ type bmap struct {
 
 **创建**
 
-```
+```text
 func makemap(t *maptype, hint int64, h *hmap, bucket unsafe.Pointer) *hmap {
    // find size parameter which will hold the requested # of elements
    B := uint8(0)
@@ -182,7 +185,8 @@ func makemap(t *maptype, hint int64, h *hmap, bucket unsafe.Pointer) *hmap {
 根据B，创建长度2^B的桶数组。这里B会受到初始值8和load factor平衡因子的影响。
 
 **访问**
-```
+
+```text
 func mapaccess2(t *maptype, h *hmap, key unsafe.Pointer) (unsafe.Pointer, bool) {
    alg := t.key.alg
    hash := alg.hash(key, uintptr(h.hash0))
@@ -223,7 +227,8 @@ func mapaccess2(t *maptype, h *hmap, key unsafe.Pointer) (unsafe.Pointer, bool) 
 * 根据hash的高8位遍历bucket，得到v。（这一大坨位运算没看懂。）
 
 **修改**
-```
+
+```text
 //go:linkname reflect_mapassign reflect.mapassign
 func reflect_mapassign(t *maptype, h *hmap, key unsafe.Pointer, val unsafe.Pointer) {
    p := mapassign(t, h, key)
@@ -236,8 +241,7 @@ func mapassign(t *maptype, h *hmap, key unsafe.Pointer) unsafe.Pointer {}
 
 put过程比较特别，之前说过bucket里面保存的是uint8数组，也就是指针。所以这里需要先给key找到对应的slot，然后将value拷贝到对应的地址。
 
-
-# Atomic原子操作
+## Atomic原子操作
 
 **Background**
 
@@ -248,9 +252,11 @@ put过程比较特别，之前说过bucket里面保存的是uint8数组，也就
 答案是否，因为i++看上去只有一行，但是背后包括了多个操作：取值，加法，赋值。
 
 **加/减**
-```
+
+```text
 atomic.AddInt32(&i, 1)
 ```
+
 代码很好理解，原子地对i加1。
 
 问题是：为什么加法需要原子性？
@@ -264,9 +270,11 @@ atomic.AddInt32(&i, 1)
 **CAS**
 
 Compare And Swap，比较并交换，常见的原子操作。
-```
+
+```text
 func CompareAndSwapInt32(addr *int32, old, new int32) (swapped bool)
 ```
+
 三个入参分别表示：被操作值的指针，被操作值的old值，被操作值的new值。
 
 首先会判断指针指向的被操作值是否与old相等，如果相等就用new替换old，完成数据更新；否则忽略替换操作。整个过程都是原子性的。
@@ -283,20 +291,21 @@ Note：CAS与lock区别：
 
 还是之前操作系统的例子，在32位操作系统，写入一个long，如果在这个写操作完成前（先改低32位，再改高32位），有一个并发读操作，这个读操作就可能会读取一个只被修改一般的数据。
 
-**Store**
-例子与之前类似。原子存储操作有一个特点，与CAS不同，存储总是成功的，它不关心old。
-```
+**Store** 例子与之前类似。原子存储操作有一个特点，与CAS不同，存储总是成功的，它不关心old。
+
+```text
 func StoreInt32(addr *int32, val int32)
 ```
 
-**Swap**
-与CAS不同，他不关心old；与Store不同，它会返回old。介于两者之间。
-```
+**Swap** 与CAS不同，他不关心old；与Store不同，它会返回old。介于两者之间。
+
+```text
 func SwapInt32(addr *int32, new int32) (old int32)
 ```
-原子值
-上面的原子操作都只支持基本类型，如果想对其他类型进行原子操作怎么办？所以Go提供了原子值类型，它对于类型没有限制。它支持Load和Store方法。
-```
+
+原子值 上面的原子操作都只支持基本类型，如果想对其他类型进行原子操作怎么办？所以Go提供了原子值类型，它对于类型没有限制。它支持Load和Store方法。
+
+```text
 // A Value provides an atomic load and store of a consistently typed value.
 // The zero value for a Value returns nil from Load.
 // Once Store has been called, a Value must not be copied.
@@ -306,8 +315,10 @@ type Value struct {
     v interface{}
 }
 ```
+
 执行Store之后，Value禁止copy。目前已知的copy行为包括：赋值其他变量，函数入参，函数返回值，传入chan。
-```
+
+```text
 // Store sets the value of the Value to x.
 // All calls to Store for a given Value must use values of the same concrete type.
 // Store of an inconsistent type panics, as does Store(nil).
@@ -354,8 +365,7 @@ func (v *Value) Store(x interface{}) {
 
 store不允许nil，并且类型必须与第一次store一致，否则panic。
 
-
-# sync.Map详解
+## sync.Map详解
 
 sync.Map是1.9才推荐的并发安全的map，除了互斥量以外，还运用了原子操作，所以在这之前，有必要了解下Go语言——原子操作
 
@@ -363,7 +373,7 @@ sync.Map是1.9才推荐的并发安全的map，除了互斥量以外，还运用
 
 **Struct**
 
-```
+```text
 type Map struct {
    mu Mutex
 
@@ -377,11 +387,10 @@ var expunged = unsafe.Pointer(new(interface{}))
 ```
 
 * read: readOnly, 保存了map中可以并发读的数据。并发写有可能不需要互斥，但是更新之前标记删除的数据（从一个value指针变成expunged指针），就需要将条目拷贝到dirty中，并且unexpunged操作（？还不懂什么意思，将expunged指针变成value指针？）需要锁。
-
 * dirty: 脏数据需要锁。为了尽快提升为read，dirty需要保存read中所有未标记删除的数据（减少数据拷贝？）。标记删除的条目不保存的dirty里面（那就是保存在read里面咯）
 * misses: 从read里面读，miss之后再从dirty里面读。当miss多次之后，就将dirty提升为read。
 
-```
+```text
 type entry struct {
    // If p == nil, the entry has been deleted and m.dirty == nil.
    //
@@ -393,6 +402,7 @@ type entry struct {
    p unsafe.Pointer // *interface{}
 }
 ```
+
 entry分为三种情况：
 
 * nil：已经被删除，并且dirty不存在
@@ -400,7 +410,8 @@ entry分为三种情况：
 * 其他情况：保存在read和dirty（存在）中
 
 **Store**
-```
+
+```text
 func (m *Map) Store(key, value interface{}) {
    read, _ := m.read.Load().(readOnly)
    if e, ok := read.m[key]; ok && e.tryStore(&value) {
@@ -410,7 +421,7 @@ func (m *Map) Store(key, value interface{}) {
 
 从read中读取key，如果key存在就tryStore。
 
-```
+```text
 func (e *entry) tryStore(i *interface{}) bool {
    p := atomic.LoadPointer(&e.p)
    if p == expunged {
@@ -432,43 +443,39 @@ func (e *entry) tryStore(i *interface{}) bool {
 * 如果条目被标记删除了（空接口指针），返回false；按照之前的逻辑，就是说如果条目被标记了，就继续store
 * 尝试CAS新的value值，成功代表更新条目值成功。
 * CAS失败，重新原子load，继续CAS，除非发现条目被其他的G标记了。
-```
-   m.mu.Lock()
-   read, _ = m.read.Load().(readOnly)
-   if e, ok := read.m[key]; ok {
-      if e.unexpungeLocked() {
-         m.dirty[key] = e
-      }
-      e.storeLocked(&value)
+
+  \`\`\`
+
+   m.mu.Lock\(\)
+
+   read, \_ = m.read.Load\(\).\(readOnly\)
+
+   if e, ok := read.m\[key\]; ok {
+
+  ```text
+  if e.unexpungeLocked() {
+     m.dirty[key] = e
+  }
+  e.storeLocked(&value)
+  ```
+
    }
 
-func (e *entry) unexpungeLocked() (wasExpunged bool) {
-   return atomic.CompareAndSwapPointer(&e.p, expunged, nil)
-}
+func \(e \*entry\) unexpungeLocked\(\) \(wasExpunged bool\) { return atomic.CompareAndSwapPointer\(&e.p, expunged, nil\) }
 
-func (e *entry) storeLocked(i *interface{}) {
-    atomic.StorePointer(&e.p, unsafe.Pointer(i))
-}
-```
+func \(e _entry\) storeLocked\(i_ interface{}\) { atomic.StorePointer\(&e.p, unsafe.Pointer\(i\)\) }
 
+```text
 注意这里开始需要加锁，因为需要操作dirty。
 
 条目在read中，首先取消标记，然后将条目保存到dirty里。（因为标记的数据不在dirty里）
 
 最后原子保存value到条目里面，这里注意read和dirty都有条目。
 ```
-   else if e, ok := m.dirty[key]; ok {
-      e.storeLocked(&value)
-   } else {
-      if !read.amended {
-         m.dirtyLocked()
-         m.read.Store(readOnly{m: read.m, amended: true})
-      }
-      m.dirty[key] = newEntry(value)
-   }
-   m.mu.Unlock()
-}
-```
+
+else if e, ok := m.dirty\[key\]; ok { e.storeLocked\(&value\) } else { if !read.amended { m.dirtyLocked\(\) m.read.Store\(readOnly{m: read.m, amended: true}\) } m.dirty\[key\] = newEntry\(value\) } m.mu.Unlock\(\) }
+
+```text
 * 如果条目在dirty里，就保存value。这里注意哈，read里没有这个条目，而dirty里面有。
 * 其他情况，新增条目。将所有未标记的条目保存到dirty里面。
 
@@ -490,42 +497,12 @@ func (e *entry) storeLocked(i *interface{}) {
 * 从dirty里面读
 * 解锁
 ```
-func (m *Map) Load(key interface{}) (value interface{}, ok bool) {
-   read, _ := m.read.Load().(readOnly)
-   e, ok := read.m[key]
-   if !ok && read.amended {
-      m.mu.Lock()
-      // Avoid reporting a spurious miss if m.dirty got promoted while we were
-      // blocked on m.mu. (If further loads of the same key will not miss, it's
-      // not worth copying the dirty map for this key.)
-      read, _ = m.read.Load().(readOnly)
-      e, ok = read.m[key]
-      if !ok && read.amended {
-         e, ok = m.dirty[key]
-         // Regardless of whether the entry was present, record a miss: this key
-         // will take the slow path until the dirty map is promoted to the read
-         // map.
-         m.missLocked()
-      }
-      m.mu.Unlock()
-   }
-   if !ok {
-      return nil, false
-   }
-   return e.load()
-}
 
-func (m *Map) missLocked() {
-    m.misses++
-    if m.misses < len(m.dirty) {
-        return
-    }
-    m.read.Store(readOnly{m: m.dirty})
-    m.dirty = nil
-    m.misses = 0
-}
-```
+func \(m \*Map\) Load\(key interface{}\) \(value interface{}, ok bool\) { read,  _:= m.read.Load\(\).\(readOnly\) e, ok := read.m\[key\] if !ok && read.amended { m.mu.Lock\(\) // Avoid reporting a spurious miss if m.dirty got promoted while we were // blocked on m.mu. \(If further loads of the same key will not miss, it's // not worth copying the dirty map for this key.\) read,_  = m.read.Load\(\).\(readOnly\) e, ok = read.m\[key\] if !ok && read.amended { e, ok = m.dirty\[key\] // Regardless of whether the entry was present, record a miss: this key // will take the slow path until the dirty map is promoted to the read // map. m.missLocked\(\) } m.mu.Unlock\(\) } if !ok { return nil, false } return e.load\(\) }
 
+func \(m \*Map\) missLocked\(\) { m.misses++ if m.misses &lt; len\(m.dirty\) { return } m.read.Store\(readOnly{m: m.dirty}\) m.dirty = nil m.misses = 0 }
+
+```text
 与猜测的区别：
 
 * 读了两次read，做了一个double-check
@@ -539,84 +516,47 @@ func (m *Map) missLocked() {
 * read没有，dirty有，dirty中还未升级的数据
 * read有，dirty没有，标记删除的数据
 ```
-func (m *Map) Delete(key interface{}) {
-   read, _ := m.read.Load().(readOnly)
-   e, ok := read.m[key]
-   if !ok && read.amended {
-      m.mu.Lock()
-      read, _ = m.read.Load().(readOnly)
-      e, ok = read.m[key]
-      if !ok && read.amended {
-         delete(m.dirty, key)
-      }
-      m.mu.Unlock()
-   }
-   if ok {
-      e.delete()
-   }
-}
-```
 
+func \(m \*Map\) Delete\(key interface{}\) { read,  _:= m.read.Load\(\).\(readOnly\) e, ok := read.m\[key\] if !ok && read.amended { m.mu.Lock\(\) read,_  = m.read.Load\(\).\(readOnly\) e, ok = read.m\[key\] if !ok && read.amended { delete\(m.dirty, key\) } m.mu.Unlock\(\) } if ok { e.delete\(\) } }
+
+```text
 先看第二种情况。加锁直接删除dirty数据。思考下貌似没什么问题，本身就是脏数据。
 ```
-func (e *entry) delete() (hadValue bool) {
-   for {
-      p := atomic.LoadPointer(&e.p)
-      if p == nil || p == expunged {
-         return false
-      }
-      if atomic.CompareAndSwapPointer(&e.p, p, nil) {
-         return true
-      }
-   }
-}
-```
 
+func \(e \*entry\) delete\(\) \(hadValue bool\) { for { p := atomic.LoadPointer\(&e.p\) if p == nil \|\| p == expunged { return false } if atomic.CompareAndSwapPointer\(&e.p, p, nil\) { return true } } }
+
+```text
 第一种和第三种情况唯一的区别就是条目是否被标记。标记代表删除，所以直接返回。否则CAS操作置为nil。这里总感觉少点什么，因为条目其实还是存在的，虽然指针nil。
 
 **标记**
 看了一圈貌似没找到标记的逻辑，因为删除只是将他变成nil。
 ```
-func (e *entry) tryExpungeLocked() (isExpunged bool) {
-   p := atomic.LoadPointer(&e.p)
-   for p == nil {
-      if atomic.CompareAndSwapPointer(&e.p, nil, expunged) {
-         return true
-      }
-      p = atomic.LoadPointer(&e.p)
-   }
-   return p == expunged
-}
 
-func (m *Map) dirtyLocked() {
-    if m.dirty != nil {
-        return
-    }
+func \(e \*entry\) tryExpungeLocked\(\) \(isExpunged bool\) { p := atomic.LoadPointer\(&e.p\) for p == nil { if atomic.CompareAndSwapPointer\(&e.p, nil, expunged\) { return true } p = atomic.LoadPointer\(&e.p\) } return p == expunged }
 
-    read, _ := m.read.Load().(readOnly)
-    m.dirty = make(map[interface{}]*entry, len(read.m))
-    for k, e := range read.m {
-        if !e.tryExpungeLocked() {
-            m.dirty[k] = e
-        }
+func \(m \*Map\) dirtyLocked\(\) { if m.dirty != nil { return }
+
+```text
+read, _ := m.read.Load().(readOnly)
+m.dirty = make(map[interface{}]*entry, len(read.m))
+for k, e := range read.m {
+    if !e.tryExpungeLocked() {
+        m.dirty[k] = e
     }
 }
 ```
+
+}
+
+```text
 之前以为这个逻辑就是简单的将为标记的条目拷贝给dirty，现在看来大有文章。
 
 p == nil，说明条目已经被delete了，CAS将他置为标记删除。然后这个条目就不会保存在dirty里面。
 ```
-func (m *Map) missLocked() {
-   m.misses++
-   if m.misses < len(m.dirty) {
-      return
-   }
-   m.read.Store(readOnly{m: m.dirty})
-   m.dirty = nil
-   m.misses = 0
-}
-```
-这里其实就跟miss逻辑串起来了，因为miss达到阈值之后，dirty会全量变成read，也就是说标记删除在这一步最终删除。这个还是很巧妙的。
+
+func \(m \*Map\) missLocked\(\) { m.misses++ if m.misses &lt; len\(m.dirty\) { return } m.read.Store\(readOnly{m: m.dirty}\) m.dirty = nil m.misses = 0 }
+
+\`\`\` 这里其实就跟miss逻辑串起来了，因为miss达到阈值之后，dirty会全量变成read，也就是说标记删除在这一步最终删除。这个还是很巧妙的。
 
 真正的删除逻辑：
 
@@ -624,10 +564,7 @@ func (m *Map) missLocked() {
 * store的时候，将nil的条目标记，并且这些条目不会存在于dirty中
 * load的时候，如果miss达到阈值，就将dirty全量变成read，变现地删除了nil条目
 
+## Sync.Once
 
-# Sync.Once
-
-[Once详解](https://mp.weixin.qq.com/s/Lsm-BMdKCKNQjRndNCLwLw)
-[Once](https://pioneerlfn.github.io/2019/12/12/go-sync-Once/)
-
+[Once详解](https://mp.weixin.qq.com/s/Lsm-BMdKCKNQjRndNCLwLw) [Once](https://pioneerlfn.github.io/2019/12/12/go-sync-Once/)
 
