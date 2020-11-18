@@ -103,7 +103,7 @@
 ## API
 
 * [Rest](notes/api.md)
-* [API前后端规范](notes/api_guide.md)
+* [API前后端规范](notes/api-guide.md)
 * [JsonApi](notes/api.md)
 * [Swagger](notes/api.md)
 * [身份验证](notes/api.md)
