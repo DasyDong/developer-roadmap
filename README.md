@@ -6,7 +6,7 @@
 &nbsp; ![](https://badgen.net/github/forks/dasydong/interview)&nbsp;
 &nbsp; ![](https://img.shields.io/github/repo-size/dasydong/interview?color=orange)&nbsp;
 &nbsp; ![](https://badgen.net/github/last-commit/dasydong/interview)&nbsp;
-&nbsp; <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/999?icon=github&color=4ab8a1"></a>
+<!-- &nbsp; <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/999?icon=github&color=4ab8a1"></a> -->
 
 
 | &nbsp;互联网 &nbsp;&nbsp; |  &nbsp; &nbsp;前端知识 &nbsp;&nbsp;|  &nbsp;&nbsp; 操作系统 &nbsp;&nbsp;|  &nbsp;&nbsp; 编程语言 Python&Go &nbsp;&nbsp;|  &nbsp;&nbsp; 数据库  &nbsp; &nbsp;|&nbsp;&nbsp;面向对象&nbsp;&nbsp;| &nbsp;&nbsp; 算法 &nbsp;&nbsp;| &nbsp;&nbsp; 贡献 &nbsp;&nbsp;
