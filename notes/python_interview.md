@@ -164,21 +164,21 @@
     * [148.对cookies与session的了解？他们能单独用吗？](python_interview.md#148对cookies与session的了解他们能单独用吗)
     * [149.测试工具](python_interview.md#149测试工具)
 
-      **Python基础**
+ # Python基础
 
-      **Python语言基本**
+ ## Python语言基本
 
-      **1.列出 5 个常用 Python 标准库?**
+ ### 1.列出 5 个常用 Python 标准库?
 
-      os, logging, system, time, re, math,threading
+ os, logging, system, time, re, math,threading
 
-      **2.Python的内建数据类型有哪些?**
+ ### 2.Python的内建数据类型有哪些?
 
-      string, int, list, tuple, dict
+ string, int, list, tuple, dict
 
-      **3.简述 with 方法打开处理文件帮我我们做了什么？**
+ ### 3.简述 with 方法打开处理文件帮我我们做了什么？
 
-      with 语句适用于对资源进行访问的场合，确保不管使用过程中是否发生异常都会执行必要的“清理”操作，释放资源，比如文件使用后自动关闭、线程中锁的自动获取和释放等。
+ with 语句适用于对资源进行访问的场合，确保不管使用过程中是否发生异常都会执行必要的“清理”操作，释放资源，比如文件使用后自动关闭、线程中锁的自动获取和释放等。
 
 with语句即“上下文管理器”，在程序中用来表示代码执行过程中所处的前后环境 上下文管理器：含有**enter**和**exit**方法的对象就是上下文管理器。
 
