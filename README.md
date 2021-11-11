@@ -163,7 +163,5 @@
 
 [![Stargazers over time](https://starchart.cc/DasyDong/interview.svg)](https://starchart.cc/DasyDong/interview)
 
-## 最后
-
-给我一个 ⭐ 吧！&& 请我喝一杯☕️！ ![](.gitbook/assets/WechatIMG95.jpeg)
+ 
 
